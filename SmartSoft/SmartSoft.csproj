@@ -67,13 +67,105 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\Base.css" />
+    <Content Include="css\basictable.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\font-awesome.css" />
+    <Content Include="css\icon-font.min.css" />
+    <Content Include="css\jqcandlestick.css" />
+    <Content Include="css\jquery-ui.css" />
+    <Content Include="css\lightbox.css" />
+    <Content Include="css\monthly.css" />
+    <Content Include="css\morris.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\table-style.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="images\close.png" />
+    <Content Include="images\closew.gif" />
+    <Content Include="images\cross.png" />
+    <Content Include="images\g1.jpg" />
+    <Content Include="images\g2.jpg" />
+    <Content Include="images\g3.jpg" />
+    <Content Include="images\g4.jpg" />
+    <Content Include="images\g5.jpg" />
+    <Content Include="images\g6.jpg" />
+    <Content Include="images\g7.jpg" />
+    <Content Include="images\g8.jpg" />
+    <Content Include="images\g9.jpg" />
+    <Content Include="images\grid.png" />
+    <Content Include="images\icon_sprite.png" />
+    <Content Include="images\in.jpg" />
+    <Content Include="images\in1.jpg" />
+    <Content Include="images\in10.jpg" />
+    <Content Include="images\in11.jpg" />
+    <Content Include="images\in2.jpg" />
+    <Content Include="images\in3.jpg" />
+    <Content Include="images\in4.jpg" />
+    <Content Include="images\in5.jpg" />
+    <Content Include="images\in6.jpg" />
+    <Content Include="images\in7.jpg" />
+    <Content Include="images\in8.jpg" />
+    <Content Include="images\in9.jpg" />
+    <Content Include="images\leftw.gif" />
+    <Content Include="images\next.png" />
+    <Content Include="images\phon.png" />
+    <Content Include="images\prev.png" />
+    <Content Include="images\rightw.gif" />
+    <Content Include="images\right_arrow.png" />
+    <Content Include="images\search.png" />
+    <Content Include="images\smile.png" />
+    <Content Include="images\tick.png" />
+    <Content Include="images\tick1.png" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\Chart.js" />
+    <Content Include="js\jquery-2.1.4.min.js" />
+    <Content Include="js\jquery-ui.js" />
+    <Content Include="js\jquery.basictable.min.js" />
+    <Content Include="js\jquery.jqcandlestick.min.js" />
+    <Content Include="js\jquery.nicescroll.js" />
+    <Content Include="js\lightbox-plus-jquery.min.js" />
+    <Content Include="js\monthly.js" />
+    <Content Include="js\morris.js" />
+    <Content Include="js\raphael-min.js" />
+    <Content Include="js\scripts.js" />
+    <Content Include="Pages\index.aspx" />
+    <Content Include="Pages\Owner.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\Base.Master.cs">
+      <DependentUpon>Base.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Base.Master.designer.cs">
+      <DependentUpon>Base.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Owner.aspx.cs">
+      <DependentUpon>Owner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Owner.aspx.designer.cs">
+      <DependentUpon>Owner.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="packages.config" />
+    <Content Include="Pages\Base.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

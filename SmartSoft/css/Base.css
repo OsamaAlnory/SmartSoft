@@ -1,0 +1,61 @@
+﻿.egen{
+
+    background-color: rgba(245,245,220,0.3);
+
+}
+
+body {
+    background-color: #99bdf7;
+    padding: 20px;
+}
+
+html, body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 100%;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h2, h3 {
+    color: white;
+}
+
+.stats1 {
+    padding: 2em 0;
+    background-color: #ff4a43;
+}
+
+.stats2 {
+    padding: 2em 0;
+    background-color: #a2d200;
+}
+
+.stats3 {
+    padding: 2em 0;
+    background-color: #8e44ad;
+}
+
+i {
+    font-size: 60px;
+    color: white;
+}
+
+.left-section {
+    background-color: rebeccapurple;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.top-section-left {
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.bottom-section-left {
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    margin: 5px;
+}
