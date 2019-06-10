@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2016
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartSoft", "SmartSoft\SmartSoft.csproj", "{DB8E13C2-D591-4165-9245-1BCB8FD73308}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB8E13C2-D591-4165-9245-1BCB8FD73308}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB8E13C2-D591-4165-9245-1BCB8FD73308}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB8E13C2-D591-4165-9245-1BCB8FD73308}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB8E13C2-D591-4165-9245-1BCB8FD73308}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {960CF11C-1D83-4442-B2F4-FA3A31AA7832}
+	EndGlobalSection
+EndGlobal
