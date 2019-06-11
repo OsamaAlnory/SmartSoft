@@ -28,14 +28,12 @@ namespace SmartSoft.Pages
                     A += ","+objs[x].ToString();
                 }
             }
-            Button1.Value = A;
-
-           
+            some_cr.Value = A;
         }
 
         protected void btn_add_Click(object sender, EventArgs e)
         {
-            ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "get();", true);
+            //ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "get();", true);
             if (username.Text == "" && password.Text == "" && school.Text == "")
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "fuck();", true);

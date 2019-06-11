@@ -67,12 +67,12 @@ namespace SmartSoft.Pages {
         protected global::System.Web.UI.WebControls.Button btn_add;
         
         /// <summary>
-        /// Button1 control.
+        /// some_cr control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Button1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden some_cr;
     }
 }

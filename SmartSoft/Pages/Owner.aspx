@@ -103,27 +103,29 @@
                         </div>
               </div>
                 </div>
-         <input id="Button1" runat="server" type="text" />
+         <input id="some_cr" runat="server" type="hidden"/>
          </div>
       <script> 
 
-          function get() {
-              try {
-                   
-                  var bla = $('#Button1').val();
-                  alert(bla);
-              } catch (e) {
-                  alert(e);
-              }
-              
-          }
-         
+          $(document).ready(function () {
+              ref();
+          });
 
         function ref() {
+            var bla = $('#<%=some_cr.ClientID%>').val();
+            var a = feedUpdateResponse.split(","), i;
             var _html = "";
-            _html += "<div class=\"row\"><\"form_name\">Förnamn *</label><input id=\"fn" + x + "\" type=\"text\" name=\"name\" class=\"form-control btn gradient-bg \" placeholder=\"Vänligen skriv ditt förnamn *\" required=\"required\" data-error=\"Obligatoriskt fält.\"/><div class=\"help-block with-errors\"></div></div>";
+            for (i = 0; i < a.length; i++) {
+                _html += "<div class=\"row\"><div class=\"col-md-6\"><h3 class=\"h3_lbl\">";
+                _html += "<asp: Label ID=\"Label" + i + "\" runat=\"server\" Text=\"" + a[i] + "\"></asp: Label></h3>";
+                _html += "</div><div class=\"col-md-6\"><asp: Button CssClass=\"remove_btn\" ID=\"BTN_" + i + "\" runat=\"server\" Text=\"Delete\"/>";
+                _html += "</div></div><hr/>";
+            }
+            
+            
+            //_html += "<div class=\"row\"><\"form_name\">Förnamn *</label><input id=\"fn" + x + "\" type=\"text\" name=\"name\" class=\"form-control btn gradient-bg \" placeholder=\"Vänligen skriv ditt förnamn *\" required=\"required\" data-error=\"Obligatoriskt fält.\"/><div class=\"help-block with-errors\"></div></div>";
             $('#acc').html(_html);
-          }
+        }
 
     </script>
 </asp:Content>
