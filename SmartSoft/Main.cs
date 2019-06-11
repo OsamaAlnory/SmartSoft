@@ -10,13 +10,13 @@ namespace SmartSoft.Database
 {
     public class Main
     {
+        public static SqlConnection con = new SqlConnection(ConnectionString.con);
+
         public static void Send(Page page, string text)
         {
             ScriptManager.RegisterStartupScript(page, page.GetType(), 
                 "text", "alert('"+text+ "')", true);
         }
-
-
 
         public static void Reg(Page page, string func)
         {
@@ -108,6 +108,21 @@ namespace SmartSoft.Database
             //string[] NEW = new string[valid];
 
             return _val;
+        }
+
+        public static void AddTo(Producer prod, string[] fields, params object[] obj)
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            SqlCommand sql = new SqlCommand(prod.ToString(), con);
+            sql.CommandType = CommandType.StoredProcedure;
+            for (int x = 0; x < fields.Length; x++) {
+                sql.Parameters.AddWithValue("@"+fields[x], obj[x]);
+            }
+            sql.ExecuteNonQuery();
+            con.Close();
         }
 
     }
