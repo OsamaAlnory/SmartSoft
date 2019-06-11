@@ -128,7 +128,6 @@
     <Content Include="js\morris.js" />
     <Content Include="js\raphael-min.js" />
     <Content Include="js\scripts.js" />
-    <Content Include="Pages\index.aspx" />
     <Content Include="Pages\Owner.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -139,13 +138,6 @@
     </Compile>
     <Compile Include="Pages\Base.Master.designer.cs">
       <DependentUpon>Base.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\index.aspx.cs">
-      <DependentUpon>index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\index.aspx.designer.cs">
-      <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Owner.aspx.cs">
       <DependentUpon>Owner.aspx</DependentUpon>

@@ -22,6 +22,11 @@ h2, h3 {
     color: white;
 }
 
+h4{
+    color:white;
+    font-size:xx-large;
+}
+
 .stats1 {
     padding: 2em 0;
     background-color: #ff4a43;
@@ -59,3 +64,86 @@ i {
     border-radius: 10px;
     margin: 5px;
 }
+
+
+.right-section {
+    background-color: rebeccapurple;
+    border-radius: 10px;
+    margin: 20px;
+    
+}
+
+.top-section-right {
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    margin: 5px;
+
+}
+.bottom-section-right {
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    margin: 5px;
+    height:330px;
+    overflow-x:hidden !important;
+    overflow-y:auto;
+    overflow:auto;
+    
+     
+}
+
+.add_btn {
+    border-radius: 10px;
+    margin: 5px;
+    color: white;
+    background-color: blueviolet;
+    padding: 10px;
+    width:30%;
+}
+    .add_btn:hover {
+        background-color: beige;
+        color: black;
+        font-size:large;
+        box-shadow: black 0px 0px 10px 10px inset ;
+    }
+    .add_btn:visited {
+        background-color: red;
+        color: black;
+        font-size: large;
+        box-shadow: black 0px 0px 10px 10px inset;
+    }
+
+.logut_btn {
+    border-radius: 10px;
+    margin: 5px;
+    color: white;
+    background-color: red;
+    padding: 10px;
+    width: 30%;
+}
+
+    .logut_btn:hover {
+        background-color: beige;
+        color: black;
+        font-size: large;
+        box-shadow: black 0px 0px 10px 10px inset;
+    }
+
+.fields {
+    border-radius: 20px;
+    border: 1px solid;
+    font-size:large;
+    text-align:center;
+}
+
+.fields:hover{
+
+     
+    background-color:beige;
+    outline:none;
+}
+
+    .fields:focus {
+        background-color: orangered;
+        outline: none;
+    }
+    
