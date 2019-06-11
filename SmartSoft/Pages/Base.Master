@@ -16,6 +16,10 @@
     <link href="~/css/bootstrap.min.css" rel='stylesheet' type='text/css'/>
   <link rel="stylesheet" href="../css/Base.css"/>
 
+    <!-- Pop-up-->
+    <link rel="stylesheet" href="../css/sweetalert2.css" />
+    <script src="../css/sweetalert2.all.min.js"></script>
+
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>

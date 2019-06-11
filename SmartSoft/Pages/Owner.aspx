@@ -2,12 +2,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-          
+            <asp:HiddenField ID="_AdminId" runat="server" />
      <div class="container text-center egen">
             <div class="row">
                 <div class="col-md-6">
                     <h3>Inloggad Som:</h3>
                  </div>
+              
                  <div class="col-md-6">
                     <h3>Mohanad</h3>
                      <asp:Button CssClass="logut_btn"  ID="btn_logut" runat="server" Text="Logga Ut" />
@@ -57,7 +58,7 @@
                     <br />
                     </div>
                     <br />
-                    <asp:Button ID="btn_add" CssClass="add_btn"  runat="server" Text="Lägg till" />
+                    <asp:Button ID="btn_add" OnClick="btn_add_Click" CssClass="add_btn"  runat="server" Text="Lägg till" />
                     </div>
                     </div>
                          <div class="col-md-6"> 
@@ -68,26 +69,23 @@
                         </div>
                         <hr />
                         <div class="bottom-section-right">
-                         <p>Rektorer med Ta bort knapp visas här!..</p>
-                            <asp:GridView ID="adminsList" AutoGenerateColumns="true" runat="server">
+                             <asp:GridView ID="adminsList" AutoGenerateColumns="false" runat="server">
                                  <Columns>
-                                     <asp:BoundField HeaderText="ID"/>
-                                     <asp:BoundField HeaderText="Username"/>
-                                     <asp:BoundField HeaderText="School"/>
+                                     <asp:BoundField DataField="ID" HeaderText="ID"/>
+                                     <asp:BoundField DataField="Username" HeaderText="Username"/>
+                                     <asp:BoundField DataField="School" HeaderText="School"/>
                                      <asp:TemplateField>
                                          <ItemTemplate>
-                                             <asp:LinkButton runat="server" ID="admin_delete_btn">Delete</asp:LinkButton>
+                                             <asp:LinkButton runat="server" ID="admin_delete_btn" CommandArgument='<%# Eval("ID") %>'>Delete</asp:LinkButton>
                                          </ItemTemplate>
                                       </asp:TemplateField>
-
-
-                                </Columns>
+                                 </Columns>
                               </asp:GridView>
                         </div>
                         <br />
                         <br />
-                            <br />
-                         </div>
+                        <br />
+                        </div>
                         </div>
              </div>
 
