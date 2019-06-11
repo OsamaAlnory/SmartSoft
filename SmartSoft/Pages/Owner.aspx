@@ -18,20 +18,20 @@
             <hr />
             <br /><br />
             <div class="row">
-                <div class="col-md-3 stats1" style="margin-left: 50px;">
+                <div class="col-md-3 st st1" style="margin-left: 50px;">
                     <i class="glyphicon glyphicon-user" aria-hidden="true"></i>
-                    <h3>Lärare</h3>
-                    <h4>24.500</h4>
+                    <h3>Antalet Skolor</h3>
+                    <h4 id="st1h">Klicka för att visa..</h4>
                 </div>
-                <div class="col-md-3 stats2 col-md-offset-1">
+                <div class="col-md-3 st st2  col-md-offset-1">
                     <i class="glyphicon glyphicon-list-alt" aria-hidden="true"></i>
-                    <h3>Elever</h3>
-                    <h4>24.500</h4>
+                    <h3>Antalet Lärare</h3>
+                    <h4 id="st2h">Klicka för att visa..</h4>
                 </div>
-                <div class="col-md-3 stats3 col-md-offset-1">
+                <div class="col-md-3 st st3 col-md-offset-1">
                     <i class="glyphicon glyphicon-folder-open" aria-hidden="true"></i>
-                    <h3>Rektorer</h3>
-                    <h4>24.500</h4>
+                    <h3>Antalet Elever</h3>
+                    <h4 id="st3h">Klicka för att visa..</h4>
                 </div>
             </div>
             <br />
