@@ -39,6 +39,20 @@ h4{
      
   }
 
+:root {
+    --toolbar-theme: {
+    border-radius: 4px;
+  };
+    --toolbar-title-theme: {
+    color: green;
+  };
+}
+
+.toolbar {
+    @apply --toolbar-theme;
+    @apply --toolbar-title-theme;
+}
+
 .stats1 {
     padding: 2em 0;
     transition: .5s;
