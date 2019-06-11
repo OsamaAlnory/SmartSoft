@@ -39,8 +39,7 @@ namespace SmartSoft.Pages
 
         void Clear()
         {
-
-            username.Text = password.Text = school.Text = "";
+            username.Text = password.Text = school.Text="";
         }
     }
 }
