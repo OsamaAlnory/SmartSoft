@@ -18,23 +18,54 @@ h1, h2, h3, h4, h5 {
     font-family: 'Montserrat', sans-serif;
 }
 
-h2, h3 {
+h2, h3, h4 {
     color: white;
 }
 
-.stats1 {
+#st1h,#st2h,#st3h {
+    opacity: 0;
+    transition: .3s;
+}
+
+.st {
+    border-radius: 10px;
     padding: 2em 0;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.st i {transition: .5s;}
+
+.st:hover {
+    padding: 1.5em 0;
+}
+
+.st:hover i {
+    font-size: 40px;
+}
+
+.st1 {
     background-color: #ff4a43;
 }
 
-.stats2 {
-    padding: 2em 0;
+.st1:hover {
+    background-color: #a8302c;
+}
+
+.st2 {
     background-color: #a2d200;
 }
 
-.stats3 {
-    padding: 2em 0;
+.st2:hover {
+    background-color: #607c01;
+}
+
+.st3 {
     background-color: #8e44ad;
+}
+
+.st3:hover {
+    background-color: #542966;
 }
 
 i {

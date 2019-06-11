@@ -116,6 +116,7 @@
     <Content Include="images\smile.png" />
     <Content Include="images\tick.png" />
     <Content Include="images\tick1.png" />
+    <Content Include="js\base.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\Chart.js" />
     <Content Include="js\jquery-2.1.4.min.js" />

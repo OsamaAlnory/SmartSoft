@@ -21,17 +21,20 @@
             <h1>Owner Page (Administratör)</h1>
             <br /><br />
             <div class="row">
-                <div class="col-md-3 stats1" style="margin-left: 50px;">
+                <div class="col-md-3 st st1" style="margin-left: 50px;">
                     <i class="glyphicon glyphicon-user" aria-hidden="true"></i>
-                    <h3>5ra</h3>
+                    <h3>Antalet Skolor</h3>
+                    <h4 id="st1h">Klicka för att se!</h4>
                 </div>
-                <div class="col-md-3 stats2 col-md-offset-1">
+                <div class="col-md-3 st st2 col-md-offset-1">
                     <i class="glyphicon glyphicon-list-alt" aria-hidden="true"></i>
-                    <h3>fuck</h3>
+                    <h3>Antalet Admins</h3>
+                    <h4 id="st2h">Klicka för att se!</h4>
                 </div>
-                <div class="col-md-3 stats3 col-md-offset-1">
+                <div class="col-md-3 st st3 col-md-offset-1">
                     <i class="glyphicon glyphicon-folder-open" aria-hidden="true"></i>
-                    <h3>zip</h3>
+                    <h3>Antalet Elever</h3>
+                    <h4 id="st3h">Klicka för att se!</h4>
                 </div>
             </div>
             <br />
@@ -65,5 +68,6 @@
             </div>
         </div>
     </form>
+        <script src="../js/base.js"></script>
 </body>
 </html>
