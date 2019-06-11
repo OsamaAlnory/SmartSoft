@@ -69,7 +69,8 @@
                         </div>
                         <hr />
                         <div class="bottom-section-right">
-                             <asp:GridView ID="adminsList" AutoGenerateColumns="false" runat="server">
+                            
+                             <%--<asp:GridView ID="adminsList" AutoGenerateColumns="false" runat="server">
                                  <Columns>
                                      <asp:BoundField DataField="ID" HeaderText="ID"/>
                                      <asp:BoundField DataField="Username" HeaderText="Username"/>
@@ -80,14 +81,13 @@
                                          </ItemTemplate>
                                       </asp:TemplateField>
                                  </Columns>
-                              </asp:GridView>
+                              </asp:GridView>--%>
                         </div>
                         <br />
                         <br />
                         <br />
                         </div>
                         </div>
-                                            <p class="toolbar">Fuck</p>
              </div>
         </div>
 
