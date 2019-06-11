@@ -74,6 +74,8 @@
 <!-- morris JavaScript -->	
 <script src="~/js/raphael-min.js"></script>
 <script src="~/js/morris.js"></script>
+        <script src="../js/base.js"></script>
+    <script src="../js/sender.js"></script>
 <script>
 	$(document).ready(function() {
 		//BOX BUTTON SHOW AND CLOSE
@@ -129,6 +131,5 @@
 	   
 	});
 	</script>
-    <script src="../js/base.js"></script>
 </body>
 </html>

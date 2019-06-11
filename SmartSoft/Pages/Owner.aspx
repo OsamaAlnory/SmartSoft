@@ -68,10 +68,8 @@
                          <h2>Se Rektorer</h2>
                         </div>
                         <hr />
-                        <div class="bottom-section-right">
-                            
-                            
-                             <%--<asp:GridView ID="adminsList" AutoGenerateColumns="false" runat="server">
+                        <div id="acc" class="bottom-section-right">
+                            <%--<asp:GridView ID="adminsList" AutoGenerateColumns="false" runat="server">
                                  <Columns>
                                      <asp:BoundField DataField="ID" HeaderText="ID"/>
                                      <asp:BoundField DataField="Username" HeaderText="Username"/>
@@ -83,14 +81,49 @@
                                       </asp:TemplateField>
                                  </Columns>
                               </asp:GridView>--%>
-                        </div>
+                            <div class="row">
+                            <div class="col-md-6">
+                                <h3 class="h3_lbl">Username:</h3>
+                                 <hr />
+                                </div>
+                                 <div class="col-md-6">
+                                       <h3 class="h3_lbl">Action:</h3>
+                                     <hr />
+                                     </div>
+                              </div>
+                            <div class="bsr">
+                               
+                               </div>
+                         <br />
                         <br />
                         <br />
-                        <br />
                         </div>
+                            <br />
+                             
                         </div>
-                                            <p class="toolbar">Fuck</p>
-             </div>
-        </div>
+              </div>
+                </div>
+         <input id="Button1" runat="server" type="text" />
+         </div>
+      <script> 
 
+          function get() {
+              try {
+                   
+                  var bla = $('#Button1').val();
+                  alert(bla);
+              } catch (e) {
+                  alert(e);
+              }
+              
+          }
+         
+
+        function ref() {
+            var _html = "";
+            _html += "<div class=\"row\"><\"form_name\">Förnamn *</label><input id=\"fn" + x + "\" type=\"text\" name=\"name\" class=\"form-control btn gradient-bg \" placeholder=\"Vänligen skriv ditt förnamn *\" required=\"required\" data-error=\"Obligatoriskt fält.\"/><div class=\"help-block with-errors\"></div></div>";
+            $('#acc').html(_html);
+          }
+
+    </script>
 </asp:Content>

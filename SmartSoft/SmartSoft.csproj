@@ -131,6 +131,7 @@
     <Content Include="js\morris.js" />
     <Content Include="js\raphael-min.js" />
     <Content Include="js\scripts.js" />
+    <Content Include="js\sender.js" />
     <Content Include="Pages\Owner.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
