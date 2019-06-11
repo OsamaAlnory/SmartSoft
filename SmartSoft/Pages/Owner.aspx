@@ -70,13 +70,26 @@
                         <hr />
                         <div class="bottom-section-right">
                             
+                            
+                             <%--<asp:GridView ID="adminsList" AutoGenerateColumns="false" runat="server">
+                                 <Columns>
+                                     <asp:BoundField DataField="ID" HeaderText="ID"/>
+                                     <asp:BoundField DataField="Username" HeaderText="Username"/>
+                                     <asp:BoundField DataField="School" HeaderText="School"/>
+                                     <asp:TemplateField>
+                                         <ItemTemplate>
+                                             <asp:LinkButton runat="server" ID="admin_delete_btn" CommandArgument='<%# Eval("ID") %>'>Delete</asp:LinkButton>
+                                         </ItemTemplate>
+                                      </asp:TemplateField>
+                                 </Columns>
+                              </asp:GridView>--%>
                         </div>
                         <br />
                         <br />
                         <br />
                         </div>
                         </div>
-                                            
+                                            <p class="toolbar">Fuck</p>
              </div>
         </div>
 
