@@ -110,6 +110,11 @@ namespace SmartSoft.Database
             return _val;
         }
 
+        public static void AddTo(Producer prod, Fields fields, params object[] obj)
+        {
+            AddTo(prod, fields.getFields(), obj);
+        }
+
         public static void AddTo(Producer prod, string[] fields, params object[] obj)
         {
             if (con.State == ConnectionState.Closed)

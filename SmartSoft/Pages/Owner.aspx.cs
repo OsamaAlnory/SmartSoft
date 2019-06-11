@@ -20,8 +20,8 @@ namespace SmartSoft.Pages
 
         protected void btn_add_Click(object sender, EventArgs e)
         {
-            Main.AddTo(Producer.AddAccount, new string[] { "ID","Username","Password",
-            "UType","School"}, 0, username.Text, password.Text, 1, school.Text);
+            Main.AddTo(Producer.AddAccount, Fields.ACCOUNT, 0, 
+                username.Text, password.Text, 1, school.Text);
             Clear();
         }
 

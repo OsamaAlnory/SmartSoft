@@ -136,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\ConnectionString.cs" />
+    <Compile Include="Database\Fields.cs" />
     <Compile Include="Database\Producer.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Pages\Base.Master.cs">
