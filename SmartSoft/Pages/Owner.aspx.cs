@@ -29,5 +29,19 @@ namespace SmartSoft.Pages
         {
             username.Text = password.Text = school.Text="";
         }
+
+        void FillGrid()
+        {
+            SqlConnection con = new SqlConnection(ConnectionString.con);
+            if (con.State == ConnectionState.Closed)
+                con.Open();
+            SqlDataAdapter sqlData = new SqlDataAdapter("VIEWALL", con);
+            sqlData.SelectCommand.CommandType = CommandType.StoredProcedure;
+            DataTable dtbl = new DataTable();
+            sqlData.Fill(dtbl);
+            con.Close();
+            AccountList.DataSource = dtbl;
+            AccountList.DataBind();
+        }
     }
 }
