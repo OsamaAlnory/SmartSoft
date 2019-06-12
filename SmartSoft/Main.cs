@@ -115,7 +115,7 @@ namespace SmartSoft.Database
             AddTo(prod, fields.getFields(), obj);
         }
 
-        public static void AddTo(Producer prod, string[] fields, params object[] obj)
+        public static async void AddTo(Producer prod, string[] fields, params object[] obj)
         {
             if (con.State == ConnectionState.Closed)
             {
@@ -126,7 +126,7 @@ namespace SmartSoft.Database
             for (int x = 0; x < fields.Length; x++) {
                 sql.Parameters.AddWithValue("@"+fields[x], obj[x]);
             }
-            sql.ExecuteNonQuery();
+            await sql.ExecuteNonQueryAsync();
             con.Close();
         }
 
