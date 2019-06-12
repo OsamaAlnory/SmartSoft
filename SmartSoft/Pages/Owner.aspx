@@ -69,6 +69,22 @@
                         </div>
                         <hr />
                         <div id="acc" class="bottom-section-right">
+                             <div class="row">
+             <div class="col-md-6">
+                  <h3 class="h3_lbl">
+                     
+
+		            </h3>
+             </div>
+              <div class="col-md-6">
+                   
+
+                 <asp:Button CssClass="remove_btn" ID="Button1" runat="server" Text="Delete"/>
+                                    </div>
+                                </div >
+             <hr />
+
+
                             <%--<asp:GridView ID="adminsList" AutoGenerateColumns="false" runat="server">
                                  <Columns>
                                      <asp:BoundField DataField="ID" HeaderText="ID"/>
@@ -115,16 +131,17 @@
             var bla = $('#<%=some_cr.ClientID%>').val();
             var a = feedUpdateResponse.split(","), i;
             var _html = "";
+/*
             for (i = 0; i < a.length; i++) {
                 _html += "<div class=\"row\"><div class=\"col-md-6\"><h3 class=\"h3_lbl\">";
                 _html += "<asp: Label ID=\"Label" + i + "\" runat=\"server\" Text=\"" + a[i] + "\"></asp: Label></h3>";
                 _html += "</div><div class=\"col-md-6\"><asp: Button CssClass=\"remove_btn\" ID=\"BTN_" + i + "\" runat=\"server\" Text=\"Delete\"/>";
                 _html += "</div></div><hr/>";
             }
+
+            */
             
             
-            //_html += "<div class=\"row\"><\"form_name\">Förnamn *</label><input id=\"fn" + x + "\" type=\"text\" name=\"name\" class=\"form-control btn gradient-bg \" placeholder=\"Vänligen skriv ditt förnamn *\" required=\"required\" data-error=\"Obligatoriskt fält.\"/><div class=\"help-block with-errors\"></div></div>";
-            $('#acc').html(_html);
         }
 
     </script>
