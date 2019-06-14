@@ -10,96 +10,78 @@
 namespace SmartSoft.Pages {
     
     
-    public partial class Owner {
+    public partial class AdminFirstLogin {
         
         /// <summary>
-        /// _AdminId control.
+        /// _skolnamn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField _AdminId;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText _skolnamn;
         
         /// <summary>
-        /// Loggedlbl control.
+        /// _dittnamn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Loggedlbl;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText _dittnamn;
         
         /// <summary>
-        /// btn_logut control.
+        /// _Gatunamn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_logut;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText _Gatunamn;
         
         /// <summary>
-        /// username control.
+        /// _Postnummer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox username;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl _Postnummer;
         
         /// <summary>
-        /// password control.
+        /// _Stad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox password;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText _Stad;
         
         /// <summary>
-        /// schoolfieldpanel control.
+        /// _Email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel schoolfieldpanel;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl _Email;
         
         /// <summary>
-        /// school control.
+        /// FileUpload1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox school;
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
         
         /// <summary>
-        /// btn_add control.
+        /// upload_btn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_add;
-        
-        /// <summary>
-        /// Button1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-        
-        /// <summary>
-        /// some_cr control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden some_cr;
+        protected global::System.Web.UI.HtmlControls.HtmlButton upload_btn;
     }
 }

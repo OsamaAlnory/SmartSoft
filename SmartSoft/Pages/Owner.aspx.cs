@@ -15,6 +15,18 @@ namespace SmartSoft.Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+            if (Session["Username"] != null)
+            {
+                Loggedlbl.Text = Session["Username"].ToString();
+                return;
+               
+            }
+            else
+            {
+                Response.Redirect("LogIn_Page.aspx");
+                 
+            }
 
             object[] objs = Main.GetDBValue("Accounts", "Username", new string[] { "UType" }, new string[] { "1" });
             string A = "";
@@ -33,6 +45,7 @@ namespace SmartSoft.Pages
 
         protected void btn_add_Click(object sender, EventArgs e)
         {
+            password.Text = EncryptPassword(password.Text);
             //ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "get();", true);
             if (username.Text == "" && password.Text == "" && school.Text == "")
             {
@@ -42,10 +55,11 @@ namespace SmartSoft.Pages
             }
             else
             {
-               
-                Main.AddTo(Producer.AddAccount, Fields.ACCOUNT, 0,
+                 
+                    Main.AddTo(Producer.AddAccount, Fields.ACCOUNT, 0,
                 username.Text, password.Text, 1, school.Text);
-                Clear();
+                    Clear();
+        
             }
             
         }
@@ -55,18 +69,26 @@ namespace SmartSoft.Pages
             username.Text = password.Text = school.Text="";
         }
 
-        //void FillGrid()
-        //{
-        //    SqlConnection con = new SqlConnection(ConnectionString.con);
-        //    if (con.State == ConnectionState.Closed)
-        //        con.Open();
-        //    SqlDataAdapter sqlData = new SqlDataAdapter("VIEWALL", con);
-        //    sqlData.SelectCommand.CommandType = CommandType.StoredProcedure;
-        //    DataTable dtbl = new DataTable();
-        //    sqlData.Fill(dtbl);
-        //    con.Close();
-        //    AccountList.DataSource = dtbl;
-        //    AccountList.DataBind();
-        //}
+         
+        public string EncryptPassword(string pass)
+        {
+            byte[] bytes = System.Text.Encoding.Unicode.GetBytes(pass);
+            string enkryptedpassword = Convert.ToBase64String(bytes);
+            return enkryptedpassword;
+        }
+
+        //Dekrypt Password
+        public string dekryptPassword(string pass)
+        {
+            byte[] bytes = Convert.FromBase64String(pass);
+            string dekryptpassword = System.Text.Encoding.Unicode.GetString(bytes);
+            return dekryptpassword;
+        }
+
+        protected void btn_logut_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("LogIn_Page.aspx");
+        }
     }
 }
