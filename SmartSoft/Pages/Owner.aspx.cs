@@ -36,8 +36,7 @@ namespace SmartSoft.Pages
             //ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "get();", true);
             if (username.Text == "" && password.Text == "" && school.Text == "")
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "fuck();", true);
-               // Main.Reg(this, "showError('Fyll i alla fälten.')");
+                Main.Reg(this, "showError('Fyll i alla fälten.')");
                 return;
             }
             else

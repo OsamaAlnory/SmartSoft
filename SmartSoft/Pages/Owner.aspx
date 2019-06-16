@@ -19,20 +19,20 @@
             <hr />
             <br /><br />
             <div class="row">
-                <div class="col-md-3 st st1" style="margin-left: 50px;">
+                <div class="col-md-4 st st1">
                     <i class="glyphicon glyphicon-user" aria-hidden="true"></i>
                     <h3>Antalet Skolor</h3>
-                    <h4 id="st1h">Klicka för att visa..</h4>
+                    <h4 id="st1h">Klicka för att visa</h4>
                 </div>
-                <div class="col-md-3 st st2  col-md-offset-1">
+                <div class="col-md-4 st st2">
                     <i class="glyphicon glyphicon-list-alt" aria-hidden="true"></i>
                     <h3>Antalet Lärare</h3>
-                    <h4 id="st2h">Klicka för att visa..</h4>
+                    <h4 id="st2h">Klicka för att visa</h4>
                 </div>
-                <div class="col-md-3 st st3 col-md-offset-1">
+                <div class="col-md-4 st st3">
                     <i class="glyphicon glyphicon-folder-open" aria-hidden="true"></i>
                     <h3>Antalet Elever</h3>
-                    <h4 id="st3h">Klicka för att visa..</h4>
+                    <h4 id="st3h">Klicka för att visa</h4>
                 </div>
             </div>
             <br />
@@ -69,34 +69,6 @@
                         </div>
                         <hr />
                         <div id="acc" class="bottom-section-right">
-                             <div class="row">
-             <div class="col-md-6">
-                  <h3 class="h3_lbl">
-                     
-
-		            </h3>
-             </div>
-              <div class="col-md-6">
-                   
-
-                 <asp:Button CssClass="remove_btn" ID="Button1" runat="server" Text="Delete"/>
-                                    </div>
-                                </div >
-             <hr />
-
-
-                            <%--<asp:GridView ID="adminsList" AutoGenerateColumns="false" runat="server">
-                                 <Columns>
-                                     <asp:BoundField DataField="ID" HeaderText="ID"/>
-                                     <asp:BoundField DataField="Username" HeaderText="Username"/>
-                                     <asp:BoundField DataField="School" HeaderText="School"/>
-                                     <asp:TemplateField>
-                                         <ItemTemplate>
-                                             <asp:LinkButton runat="server" ID="admin_delete_btn" CommandArgument='<%# Eval("ID") %>'>Delete</asp:LinkButton>
-                                         </ItemTemplate>
-                                      </asp:TemplateField>
-                                 </Columns>
-                              </asp:GridView>--%>
                             <div class="row">
                             <div class="col-md-6">
                                 <h3 class="h3_lbl">Username:</h3>
@@ -107,19 +79,16 @@
                                      <hr />
                                      </div>
                               </div>
-                            <div class="bsr">
-                               
+                            <div id="bsr">
+
                                </div>
-                         <br />
-                        <br />
                         <br />
                         </div>
                             <br />
-                             
-                        </div>
               </div>
                 </div>
          <input id="some_cr" runat="server" type="hidden"/>
+         </div>
          </div>
       <script> 
 
@@ -129,19 +98,17 @@
 
         function ref() {
             var bla = $('#<%=some_cr.ClientID%>').val();
-            var a = feedUpdateResponse.split(","), i;
+            var a = bla.split(","), i;
             var _html = "";
-/*
-            for (i = 0; i < a.length; i++) {
-                _html += "<div class=\"row\"><div class=\"col-md-6\"><h3 class=\"h3_lbl\">";
-                _html += "<asp: Label ID=\"Label" + i + "\" runat=\"server\" Text=\"" + a[i] + "\"></asp: Label></h3>";
-                _html += "</div><div class=\"col-md-6\"><asp: Button CssClass=\"remove_btn\" ID=\"BTN_" + i + "\" runat=\"server\" Text=\"Delete\"/>";
-                _html += "</div></div><hr/>";
+            for (x = 0; x < a.length; x++) {
+            _html += "<div class=\"row\"><div class=\"col-md-6\"><h3 class=\"h3_lbl\">"+a[x]+"";
+            _html += "</h3></div><div class=\"col-md-6\"><button id=\"del_"+a[x]+"\" class=\"remove_btn\">";
+            _html += "Delete</button></div></div><hr/>";
             }
-
-            */
-            
-            
+            if (a.length == 0) {
+            _html = "<div class=\"no-acc\"><p>No Accounts!</p></div>";
+            }
+            document.getElementById('bsr').innerHTML = _html;
         }
 
     </script>
