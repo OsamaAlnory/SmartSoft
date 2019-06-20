@@ -12,22 +12,25 @@ namespace SmartSoft.Pages
 {
     public partial class AdminFirstLogin : System.Web.UI.Page
     {
+      
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             upload_btn.ServerClick += Upload_btn_ServerClick;
-              
+            
         }
 
-        private void Upload_btn_ServerClick(object sender, EventArgs e)
+        public void Upload_btn_ServerClick(object sender, EventArgs e)
         {
             string skolnamn = _skolnamn.Value;
-            string  Adminname= _dittnamn.Value;
+            string Adminname = _dittnamn.Value;
             string Gatunamn = _Gatunamn.Value;
             string Postnummer = _Postnummer.Value;
             string Stad = _Stad.Value;
             string Email = _Email.Value;
+           
 
-            if (skolnamn == "" && Adminname == "" && Gatunamn == "" && Postnummer == "" && Stad == "" && Email == "")
+            if (skolnamn == "" || Adminname == "" || Gatunamn == "" || Postnummer == "" || Stad == "" || Email == "")
             {
                 //Var vänlig och fyll i alla fälten.
                 return;
@@ -60,20 +63,20 @@ namespace SmartSoft.Pages
                                     con.Open();
                                     cmd1.ExecuteNonQuery();
                                     con.Close();
+                                    Changestatus();
                                     Clear();
                                     
                                 }
                             }
+                            
                         }
                     }
                 }
                 Clear();
                // Response.Redirect("RektorPage");
             }
-                         
-            
-           
-        }
+
+         }
 
         void Clear()
         {
@@ -86,6 +89,20 @@ namespace SmartSoft.Pages
             _Postnummer.Value = null;
             FileUpload1.Dispose();
         }
+
+        protected void Changestatus()
+        {
+
+            using (SqlConnection sqlcon = new SqlConnection(ConnectionString.con))
+            {
+                string Updatestat = "Update Accounts set IsLogged='True' where Username='" + Session["Username"] + "'";
+                sqlcon.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = Updatestat;
+                cmd.Connection = sqlcon;
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
-     
+    
 }

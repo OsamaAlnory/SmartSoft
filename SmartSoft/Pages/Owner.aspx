@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Owner" Language="C#" MasterPageFile="~/Pages/Base.Master" AutoEventWireup="true" CodeBehind="Owner.aspx.cs" Inherits="SmartSoft.Pages.Owner" %>
+﻿<%@ Page Title="Owner" Language="C#" MasterPageFile="~/Pages/Base.Master" Async="true" AutoEventWireup="true" CodeBehind="Owner.aspx.cs" Inherits="SmartSoft.Pages.Owner" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -23,17 +23,17 @@
             <br /><br />
             <div class="row">
                 <div class="col-md-4 st st1">
-                    <i class="glyphicon glyphicon-user" aria-hidden="true"></i>
+                    <i class="glyphicon glyphicon-globe" aria-hidden="true"></i>
                     <h3>Antalet Skolor</h3>
                     <h4 id="st1h">Klicka för att visa</h4>
                 </div>
                 <div class="col-md-4 st st2">
-                    <i class="glyphicon glyphicon-list-alt" aria-hidden="true"></i>
+                    <i class="glyphicon glyphicon-user" aria-hidden="true"></i>
                     <h3>Antalet Lärare</h3>
                     <h4 id="st2h">Klicka för att visa</h4>
                 </div>
                 <div class="col-md-4 st st3">
-                    <i class="glyphicon glyphicon-folder-open" aria-hidden="true"></i>
+                    <i class="glyphicon glyphicon-education" aria-hidden="true"></i>
                     <h3>Antalet Elever</h3>
                     <h4 id="st3h">Klicka för att visa</h4>
                 </div>

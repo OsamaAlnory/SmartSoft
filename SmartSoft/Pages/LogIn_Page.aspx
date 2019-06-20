@@ -51,7 +51,7 @@
         }
 
         function NoType() {
-            alert('Fel-Type')
+            alert('Fel-Info')
         }
 
         function Wrong() {

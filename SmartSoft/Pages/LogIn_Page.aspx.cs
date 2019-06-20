@@ -12,13 +12,12 @@ namespace SmartSoft.Pages
 {
     public partial class LogIn_Page : System.Web.UI.Page
     {
-        
-         
+
         
         protected void Page_Load(object sender, EventArgs e)
         {
             login_btn.ServerClick += Login_btn_ServerClick;
-           
+
         }
 
         private void Login_btn_ServerClick(object sender, EventArgs e)
@@ -26,14 +25,13 @@ namespace SmartSoft.Pages
             string Username = _User.Value;
             string dekPassword = _Pass.Value;
 
-            if (_User.Value == "" && _Pass.Value == "")
+            if (_User.Value == "" || _Pass.Value == "")
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "Empty();", true);
                 return;
             }
             else
             {
-                 
                 SqlConnection connection = new SqlConnection(ConnectionString.con);
                 connection.Open();
                 string enkPassword = EncryptPassword(dekPassword);
@@ -57,16 +55,39 @@ namespace SmartSoft.Pages
                     //Admin(Rektor)
                     if (ds.Tables[i].Rows[i]["UType"].ToString() == "1")
                     {
-                         
                         Session["Username"] = _User.Value.Trim();
-                        ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "admin();", true);
-                        //Response.Redirect("RektorPage!!");
-                        return;
+                        using (SqlConnection sqlcon = new SqlConnection(ConnectionString.con))
+                        {
+                            string query2 = "Select IsLogged From Accounts Where Username='" + Session["Username"] + "'";
+                            SqlCommand cm = new SqlCommand();
+                            cm.CommandText = query2;
+                            cm.Connection = sqlcon;
+                            SqlDataAdapter df = new SqlDataAdapter();
+                            df.SelectCommand = cm;
+                            DataSet dg = new DataSet();
+                            df.Fill(dg);
+                            if (dg.Tables[0].Rows.Count > 0)
+                            {
+                                var v = dg.Tables[0].Rows[0]["IsLogged"].ToString();
+                                if (v == "false")
+                                {
+                                    Response.Redirect("AdminFirstLogin.aspx");
+                                    return;
+                                }
+                                else
+                                {
+                                  //  Response.Redirect("RektoriPage.aspx");
+                                    return;
+                                }
+
+                            }
+                        }
+
                     }
                     //Lärare
                     if (ds.Tables[i].Rows[i]["UType"].ToString() == "2")
                     {
-                         
+
                         Session["Username"] = _User.Value.Trim();
                         ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "Lärare();", true);
                         // Response.Redirect("LärarePage");
@@ -75,34 +96,25 @@ namespace SmartSoft.Pages
                     //Elev
                     if (ds.Tables[i].Rows[i]["UType"].ToString() == "3")
                     {
-                         
+
                         Session["Username"] = _User.Value.Trim();
                         ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "Elev();", true);
                         //Response.Redirect("ElevPage");
                         return;
                     }
-                    else
-                    {
-                        // Kontotypen Hittades Inte
-                         //ALert Kolla info
-                        Session.Abandon();
-                        ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "NoType();", true);
-                        return;
-                    }
-                    
                 }
                 else
                 {
-                    //Konto Hittades Inte
+                    // Kontotypen Hittades Inte
                     //ALert Kolla info
                     Session.Abandon();
-                    ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "Wrong();", true);
+                    ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "NoType();", true);
                     return;
                 }
             }
         }
 
-
+ 
         //Enkrypt Password
         public string EncryptPassword(string pass)
         {
