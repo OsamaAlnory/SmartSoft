@@ -16,8 +16,13 @@ namespace SmartSoft.Pages
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Username"] == null)
+            {
+                Response.Redirect("LogIn_Page.aspx");
+            }
             upload_btn.ServerClick += Upload_btn_ServerClick;
-            
+            CopyRights.Text = "Copyrights@Smartsoft-" + DateTime.Now.Year.ToString();
+
         }
 
         public void Upload_btn_ServerClick(object sender, EventArgs e)

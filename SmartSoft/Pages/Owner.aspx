@@ -51,19 +51,19 @@
                      <div class="bottom-section-left">
                     <br />
                     <h3>Username:</h3>
-                    <asp:TextBox CssClass="fields" ID="username" runat="server"></asp:TextBox>
+                    <asp:TextBox CssClass="fields" TextMode="SingleLine" ID="username" runat="server"></asp:TextBox>
                     <h3>Password:</h3>
                     <asp:TextBox ID="password" TextMode="Password" CssClass="fields" runat="server"></asp:TextBox>
-                    <asp:Panel ID="schoolfieldpanel" runat="server">
+                    <h3>E-post:</h3>
+                    <asp:TextBox ID="epost" TextMode="Email" CssClass="fields" runat="server"></asp:TextBox>
                     <h3>School:</h3>
                     <asp:TextBox ID="school" CssClass="fields" runat="server"></asp:TextBox>
-                    </asp:Panel>
                     <br />
                     <br />
                     <br />
                     </div>
                             
-                     <br />
+                    <br />
                     <asp:Button ID="btn_add" OnClick="btn_add_Click" CssClass="add_btn"  runat="server" Text="Lägg till" />
                     </div>
                     </div>

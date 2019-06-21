@@ -17,6 +17,7 @@ namespace SmartSoft.Pages
         protected void Page_Load(object sender, EventArgs e)
         {
             login_btn.ServerClick += Login_btn_ServerClick;
+            copyrights.Text= "Copyrights@Smartsoft-" + DateTime.Now.Year.ToString();
 
         }
 

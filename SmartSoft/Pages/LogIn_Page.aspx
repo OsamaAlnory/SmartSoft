@@ -29,7 +29,7 @@
                     </form>
                          </div>
                       <center>
-                     <h3 class="bg-secondary" style="padding:10px; margin:40px; font-size:medium; color:white">Copyrights@ Smartsoft-2019</h3>
+                     <h3 class="bg-secondary" style="padding:10px; margin:40px; font-size:medium; color:white"><asp:Label ID="copyrights" runat="server"></asp:Label></h3>
                         </center>
                 </div>
             </div>

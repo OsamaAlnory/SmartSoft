@@ -56,7 +56,7 @@ namespace SmartSoft.Pages
             {
                  
                 Main.AddTo(Producer.AddAccount, Fields.ACCOUNT, 0,
-                username.Text, password.Text, 1, school.Text, "false");
+                username.Text, password.Text, 1, school.Text, "false", epost.Text);
                 Clear();
         
             }
