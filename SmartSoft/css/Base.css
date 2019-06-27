@@ -1,5 +1,4 @@
-﻿.egen{
-
+﻿.egen {
     background-color: rgba(245,245,220,0.3);
 }
 
@@ -21,21 +20,21 @@ h2, h3, h4 {
     color: white;
 }
 
-#st1h,#st2h,#st3h {
+#st1h, #st2h, #st3h {
     opacity: 0;
     transition: .3s;
 }
 
 .st {
     border-radius: 10px;
-    padding:2em 0;
+    padding: 2em 0;
     transition: .5s;
-    cursor:pointer;
+    cursor: pointer;
 }
 
-h4{
-    color:white;
-  }
+h4 {
+    color: white;
+}
 
 .stats1 {
     padding: 2em 0;
@@ -43,39 +42,45 @@ h4{
     cursor: pointer;
 }
 
-.st i {transition: .5s;}
+.st i {
+    transition: .5s;
+}
+
+.st h3 {
+    
+}
 
 .st:hover {
     padding: 1.5em 0;
 }
 
-.st:hover i {
-    font-size: 40px;
-}
+    .st:hover i {
+        font-size: 40px;
+    }
 
 .st1 {
     background-color: #ff4a43;
 }
 
-.st1:hover {
-    background-color: #a8302c;
-}
+    .st1:hover {
+        background-color: #a8302c;
+    }
 
 .st2 {
     background-color: #a2d200;
 }
 
-.st2:hover {
-    background-color: #607c01;
-}
+    .st2:hover {
+        background-color: #607c01;
+    }
 
 .st3 {
     background-color: #8e44ad;
 }
 
-.st3:hover {
-    background-color: #542966;
-}
+    .st3:hover {
+        background-color: #542966;
+    }
 
 i {
     font-size: 60px;
@@ -98,7 +103,6 @@ i {
     background-color: rgba(255,255,255,0.2);
     border-radius: 10px;
     margin: 5px;
-     
 }
 
 
@@ -106,40 +110,34 @@ i {
     background-color: rebeccapurple;
     border-radius: 10px;
     margin: 20px;
-    
 }
 
 .top-section-right {
     background-color: rgba(255,255,255,0.2);
     border-radius: 10px;
     margin: 5px;
-
 }
 
-    .no-acc {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        line-height: 150px;
+.no-acc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 150px;
+}
+
+    .no-acc p {
+        font-size: xx-large;
+        text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
     }
-
-        .no-acc p {
-            font-size: xx-large;
-            text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
-                0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1),
-                0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2),
-                0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2),
-                0 20px 20px rgba(0,0,0,.15);
-
-        }
 
 #bsr {
     overflow-x: hidden !important;
     overflow-y: auto;
     overflow: auto;
     height: 350px;
-    width:100%;
+    width: 100%;
 }
+
 .bottom-section-right {
     background-color: white;
     border-radius: 10px;
@@ -152,13 +150,15 @@ i {
     color: white;
     background-color: blueviolet;
     padding: 10px;
-    width:30%;
+    width: 30%;
 }
+
     .add_btn:hover {
         background-color: beige;
         color: black;
-        box-shadow: black 0px 0px 10px 10px inset ;
+        box-shadow: black 0px 0px 10px 10px inset;
     }
+
     .add_btn:visited {
         background-color: red;
         color: black;
@@ -183,24 +183,23 @@ i {
 .fields {
     border-radius: 20px;
     border: 1px solid;
-    font-size:large;
-    text-align:center;
+    font-size: large;
+    text-align: center;
+    transition: .5s border-color;
 }
 
-.fields:hover{
-
-     
-    background-color:beige;
-    outline:none;
-}
-
-    .fields:focus {
-        background-color: orangered;
+    .fields:hover {
+        background-color: beige;
         outline: none;
     }
-.h3_lbl{
 
-    color:black !important;
+    .fields:focus {
+        border-color: #32e3ff;
+        outline: none;
+    }
+
+.h3_lbl {
+    color: black !important;
 }
 
 .remove_btn {
@@ -210,32 +209,26 @@ i {
     background-color: blueviolet;
     padding: 5px;
     width: 50%;
+    font-size: .9em;
 }
 
     .remove_btn:hover {
         background-color: beige;
         color: black;
-        font-size: large;
         box-shadow: red 0px 0px 10px 10px inset;
     }
 
-    .bg{
-        background-image:url('../images/bg-01.jpg');
-        background-size:cover;
-    }
-
-    .drop{
-        padding:10px; width:30%; margin:10px;
-    }
-
-#Rektor-panel{
-    display:none;
+.bg {
+    background-image: url('../images/bg-01.jpg');
+    background-size: cover;
 }
 
+.drop {
+    padding: 10px;
+    width: 30%;
+    margin: 10px;
+}
 
-
-
-
-
- 
-    
+#Rektor-panel {
+    display: none;
+}

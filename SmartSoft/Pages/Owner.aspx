@@ -22,17 +22,17 @@
             <hr />
             <br /><br />
             <div class="row">
-                <div class="col-md-4 st st1">
+                <div class="col m-3 st st1" runat="server">
                     <i class="glyphicon glyphicon-user" aria-hidden="true"></i>
                     <h3>Antalet Skolor</h3>
                     <h4 id="st1h">Klicka för att visa</h4>
                 </div>
-                <div class="col-md-4 st st2">
+                <div class="col m-3 st st2">
                     <i class="glyphicon glyphicon-list-alt" aria-hidden="true"></i>
                     <h3>Antalet Lärare</h3>
                     <h4 id="st2h">Klicka för att visa</h4>
                 </div>
-                <div class="col-md-4 st st3">
+                <div class="col m-3 st st3">
                     <i class="glyphicon glyphicon-folder-open" aria-hidden="true"></i>
                     <h3>Antalet Elever</h3>
                     <h4 id="st3h">Klicka för att visa</h4>
@@ -76,11 +76,11 @@
                         <hr />
                         <div id="acc" class="bottom-section-right">
                             <div class="row">
-                            <div class="col-md-6">
+                            <div class="col">
                                 <h3 class="h3_lbl">Username:</h3>
                                  <hr />
                                 </div>
-                                 <div class="col-md-6">
+                                 <div class="col">
                                        <h3 class="h3_lbl">Action:</h3>
                                      <hr />
                                      </div>
@@ -102,20 +102,20 @@
               ref();
           });
 
-        function ref() {
-            var bla = $('#<%=some_cr.ClientID%>').val();
-            var a = bla.split(","), i;
-            var _html = "";
-            for (x = 0; x < a.length; x++) {
-            _html += "<div class=\"row\"><div class=\"col-md-6\"><h3 class=\"h3_lbl\">"+a[x]+"";
-            _html += "</h3></div><div class=\"col-md-6\"><button id=\"del_"+a[x]+"\" class=\"remove_btn\">";
-            _html += "Delete</button></div></div><hr/>";
-            }
-            if (a.length == 0) {
-            _html = "<div class=\"no-acc\"><p>No Accounts!</p></div>";
-            }
-            document.getElementById('bsr').innerHTML = _html;
-        }
+          function ref() {
+              var bla = $('#<%=some_cr.ClientID%>').val();
+              var a = bla.split(","), i;
+              var _html = "";
+              for (x = 0; x < a.length; x++) {
+                  _html += "<div class=\"row\"><div class=\"col\"><h3 class=\"h3_lbl\">" + a[x] + "";
+                  _html += "</h3></div><div class=\"col\"><button id=\"del_" + a[x] + "\" class=\"remove_btn\">";
+                  _html += "Delete</button></div></div><hr/>";
+              }
+              if (a.length == 0) {
+                  _html = "<div class=\"no-acc\"><p>No Accounts!</p></div>";
+              }
+              document.getElementById('bsr').innerHTML = _html;
+          }
 
     </script>
 </asp:Content>

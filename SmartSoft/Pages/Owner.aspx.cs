@@ -24,7 +24,7 @@ namespace SmartSoft.Pages
             }
             else
             {
-                Response.Redirect("LogIn_Page.aspx");
+                //Response.Redirect("LogIn_Page.aspx");
                  
             }
 
