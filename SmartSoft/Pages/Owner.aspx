@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Owner" Language="C#" MasterPageFile="~/Pages/Base.Master" AutoEventWireup="true" CodeBehind="Owner.aspx.cs" Inherits="SmartSoft.Pages.Owner" %>
+﻿<%@ Page Title="Owner" Language="C#" MasterPageFile="~/Pages/Base.Master" Async="true" AutoEventWireup="true" CodeBehind="Owner.aspx.cs" Inherits="SmartSoft.Pages.Owner" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -22,18 +22,18 @@
             <hr />
             <br /><br />
             <div class="row">
-                <div class="col m-3 st st1" runat="server">
-                    <i class="glyphicon glyphicon-user" aria-hidden="true"></i>
+                <div class="col-md-4 st st1">
+                    <i class="glyphicon glyphicon-globe" aria-hidden="true"></i>
                     <h3>Antalet Skolor</h3>
                     <h4 id="st1h">Klicka för att visa</h4>
                 </div>
-                <div class="col m-3 st st2">
-                    <i class="glyphicon glyphicon-list-alt" aria-hidden="true"></i>
+                <div class="col-md-4 st st2">
+                    <i class="glyphicon glyphicon-user" aria-hidden="true"></i>
                     <h3>Antalet Lärare</h3>
                     <h4 id="st2h">Klicka för att visa</h4>
                 </div>
-                <div class="col m-3 st st3">
-                    <i class="glyphicon glyphicon-folder-open" aria-hidden="true"></i>
+                <div class="col-md-4 st st3">
+                    <i class="glyphicon glyphicon-education" aria-hidden="true"></i>
                     <h3>Antalet Elever</h3>
                     <h4 id="st3h">Klicka för att visa</h4>
                 </div>
@@ -51,19 +51,19 @@
                      <div class="bottom-section-left">
                     <br />
                     <h3>Username:</h3>
-                    <asp:TextBox CssClass="fields" ID="username" runat="server"></asp:TextBox>
+                    <asp:TextBox CssClass="fields" TextMode="SingleLine" ID="username" runat="server"></asp:TextBox>
                     <h3>Password:</h3>
                     <asp:TextBox ID="password" TextMode="Password" CssClass="fields" runat="server"></asp:TextBox>
-                    <asp:Panel ID="schoolfieldpanel" runat="server">
+                    <h3>E-post:</h3>
+                    <asp:TextBox ID="epost" TextMode="Email" CssClass="fields" runat="server"></asp:TextBox>
                     <h3>School:</h3>
                     <asp:TextBox ID="school" CssClass="fields" runat="server"></asp:TextBox>
-                    </asp:Panel>
                     <br />
                     <br />
                     <br />
                     </div>
                             
-                     <br />
+                    <br />
                     <asp:Button ID="btn_add" OnClick="btn_add_Click" CssClass="add_btn"  runat="server" Text="Lägg till" />
                     </div>
                     </div>

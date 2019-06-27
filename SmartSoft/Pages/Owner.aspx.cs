@@ -55,9 +55,9 @@ namespace SmartSoft.Pages
             else
             {
                  
-                    Main.AddTo(Producer.AddAccount, Fields.ACCOUNT, 0,
-                username.Text, password.Text, 1, school.Text);
-                    Clear();
+                Main.AddTo(Producer.AddAccount, Fields.ACCOUNT, 0,
+                username.Text, password.Text, 1, school.Text, "false", epost.Text);
+                Clear();
         
             }
             
@@ -68,7 +68,7 @@ namespace SmartSoft.Pages
             username.Text = password.Text = school.Text="";
         }
 
-         
+        //Encrypt Password
         public string EncryptPassword(string pass)
         {
             byte[] bytes = System.Text.Encoding.Unicode.GetBytes(pass);
