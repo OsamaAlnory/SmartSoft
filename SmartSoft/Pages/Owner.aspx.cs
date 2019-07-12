@@ -10,34 +10,38 @@ using System.Web.UI.WebControls;
 
 namespace SmartSoft.Pages
 {
-    public partial class Owner : System.Web.UI.Page
+    public partial class Owner : System.Web.UI.Page, IPostBackEventHandler
     {
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            ClientScript.GetPostBackEventReference(this, string.Empty);
+            var _x = Request.QueryString["old"];
+            if (_x != null)
+            {
+                Main.Send(Page, _x.ToString());
+            }
             if (Session["Username"] != null)
             {
                 Loggedlbl.Text = Session["Username"].ToString();
                 return;
-               
             }
             else
             {
                 //Response.Redirect("LogIn_Page.aspx");
-                 
             }
-
             object[] objs = Main.GetDBValue("Accounts", "Username", new string[] { "UType" }, new string[] { "1" });
+            object[] ids = Main.GetDBValue("Accounts", "ID", new string[] { "UType" }, new string[] { "1" });
             string A = "";
             for (int x = 0; x < objs.Length; x++)
             {
-                if(x == 0)
+                if (x == 0)
                 {
-                    A += objs[x].ToString();
-                } else
+                    A += objs[x].ToString() + ":" + ids[x];
+                }
+                else
                 {
-                    A += ","+objs[x].ToString();
+                    A += "," + objs[x].ToString() + ":" + ids[x];
                 }
             }
             some_cr.Value = A;
@@ -45,6 +49,7 @@ namespace SmartSoft.Pages
 
         protected void btn_add_Click(object sender, EventArgs e)
         {
+            
             password.Text = EncryptPassword(password.Text);
             //ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "get();", true);
             if (username.Text == "" && password.Text == "" && school.Text == "")
@@ -76,7 +81,7 @@ namespace SmartSoft.Pages
             return enkryptedpassword;
         }
 
-        //Dekrypt Password
+        //Decrypt Password
         public string dekryptPassword(string pass)
         {
             byte[] bytes = Convert.FromBase64String(pass);
@@ -88,6 +93,23 @@ namespace SmartSoft.Pages
         {
             Session.Abandon();
             Response.Redirect("LogIn_Page.aspx");
+        }
+
+        public void RaisePostBackEvent(string eventArgument)
+        {
+            if (eventArgument.StartsWith("delete"))
+            {
+                string id = eventArgument.Split(':')[1].Split('_')[1];
+                using (SqlConnection con = new SqlConnection(ConnectionString.con))
+                {
+                    con.Open();
+                    using (SqlCommand command = new SqlCommand("DELETE FROM Accounts WHERE ID = '" + id + "'", con))
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    con.Close();
+                }
+            }
         }
     }
 }
