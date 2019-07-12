@@ -148,6 +148,7 @@
     <Content Include="js\scripts.js" />
     <Content Include="js\sender.js" />
     <Content Include="Pages\AdminFirstLogin.aspx" />
+    <Content Include="Pages\AJ.aspx" />
     <Content Include="Pages\Forgot_Password.aspx" />
     <Content Include="Pages\LogIn_Page.aspx" />
     <Content Include="Pages\Owner.aspx" />
@@ -194,6 +195,13 @@
     </Compile>
     <Compile Include="Pages\AdminFirstLogin.aspx.designer.cs">
       <DependentUpon>AdminFirstLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AJ.aspx.cs">
+      <DependentUpon>AJ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AJ.aspx.designer.cs">
+      <DependentUpon>AJ.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Base.Master.cs">
       <DependentUpon>Base.Master</DependentUpon>
