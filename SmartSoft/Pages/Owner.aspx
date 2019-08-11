@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Owner" Language="C#" MasterPageFile="~/Pages/Base.Master" Async="true" AutoEventWireup="true" CodeBehind="Owner.aspx.cs" Inherits="SmartSoft.Pages.Owner" %>
+﻿<%@ Page Title="Owner" Language="C#" MasterPageFile="~/Pages/Base.Master" Async="false" AutoEventWireup="true" CodeBehind="Owner.aspx.cs" Inherits="SmartSoft.Pages.Owner" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <h3>Inloggad Som:</h3>
-                 </div>
+                </div>
               
                  <div class="col-md-6">
                     <h3>
@@ -96,6 +96,10 @@
          <input id="some_cr" runat="server" type="hidden"/>
          <asp:Button runat="server" ID="uselessButton" OnClick="uselessButton_Click"/>
          </div>
+         <button type="button" onclick="klick()">Clicka</button>
+         <button type='button' onclick="JavaScript:window.location.hash = '#1'">Navigate without refresh
+</button>
+         <input type="button" />
          </div>
       <script> 
 
@@ -105,22 +109,33 @@
 
           function ref() {
               var bla = $('#<%=some_cr.ClientID%>').val();
-              var a = bla.split(","), i;
+              var a = bla.split(",");
               var _html = "";
-              for (x = 0; x < a.length; x++) {
-                  _html += "<div class=\"row\"><div class=\"col\"><h3 class=\"h3_lbl\">" + a[x] + "";
-                  _html += "</h3></div><div class=\"col\"><button onclick='clickare()' id=\"del_" + a[x] + "\" class=\"remove_btn\">";
-                  _html += "Delete</button></div></div><hr/>";
-              }
-              if (a.length == 0) {
+              if (a != '' && a.length > 0) {
+                  for (x = 0; x < a.length; x++) {
+                      var _id = a[x].split(":");
+                      _html += "<div class=\"row\"><div class=\"col\"><h3 class=\"h3_lbl\">" + _id[0] + "";
+                      _html += "</h3></div><div class=\"col\"><button onclick=\"del(this)\" id=\"del_" + _id[1] + "\" class=\"remove_btn\">";
+                      _html += "Delete</button></div></div><hr/>";
+                  }
+              } else {
                   _html = "<div class=\"no-acc\"><p>No Accounts!</p></div>";
               }
               document.getElementById('bsr').innerHTML = _html;
           }
-          
-function clickare(){
-$('#<%=uselessButton.ClientID%>').click();
-}
+
+          function del(_id) {
+              var pageId = '<%=  Page.ClientID %>';
+              __doPostBack(pageId, "delete:" + _id.id);
+          }
+
+          function klick() {
+              try {
+                  var xmlhttp = new XMLHttpRequest();
+                  xmlhttp.open("GET", "AdminFirstLogin.aspx?old=Hello", false);
+                  xmlhttp.send(null);
+              } catch (e) { alert(e);}
+          }
 
     </script>
 </asp:Content>
