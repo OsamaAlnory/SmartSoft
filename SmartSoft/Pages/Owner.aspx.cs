@@ -19,8 +19,6 @@ namespace SmartSoft.Pages
             if (Session["Username"] != null)
             {
                 Loggedlbl.Text = Session["Username"].ToString();
-                return;
-               
             }
             else
             {
@@ -88,6 +86,11 @@ namespace SmartSoft.Pages
         {
             Session.Abandon();
             Response.Redirect("LogIn_Page.aspx");
+        }
+
+        protected void uselessButton_Click(object sender, EventArgs e)
+        {
+            Main.Send(Page, "5ora");
         }
     }
 }
