@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Owner" Language="C#" MasterPageFile="~/Pages/Base.Master" Async="false" AutoEventWireup="true" CodeBehind="Owner.aspx.cs" Inherits="SmartSoft.Pages.Owner" %>
+﻿<%@ Page Title="Owner" Language="C#" MasterPageFile="~/Pages/Base.Master" Async="true" AutoEventWireup="true" CodeBehind="Owner.aspx.cs" Inherits="SmartSoft.Pages.Owner" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -94,7 +94,7 @@
               </div>
                 </div>
          <input id="some_cr" runat="server" type="hidden"/>
-         <asp:Button runat="server" ID="uselessButton" OnClick="uselessButton_Click"/>
+<%--         <asp:Button runat="server" ID="uselessButton" OnClick="uselessButton_Click"/>--%>
          </div>
          <button type="button" onclick="klick()">Clicka</button>
          <button type='button' onclick="JavaScript:window.location.hash = '#1'">Navigate without refresh

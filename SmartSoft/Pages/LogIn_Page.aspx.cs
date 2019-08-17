@@ -16,6 +16,7 @@ namespace SmartSoft.Pages
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             login_btn.ServerClick += Login_btn_ServerClick;
             copyrights.Text= "Copyrights@Smartsoft-" + DateTime.Now.Year.ToString();
 
@@ -77,8 +78,9 @@ namespace SmartSoft.Pages
                                 }
                                 else
                                 {
-                                  //  Response.Redirect("RektoriPage.aspx");
-                                    return;
+                                   
+                                  Response.Redirect("Admin_home.aspx");
+                                  return;
                                 }
 
                             }
@@ -99,9 +101,36 @@ namespace SmartSoft.Pages
                     {
 
                         Session["Username"] = _User.Value.Trim();
-                        ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "Elev();", true);
+                        using (SqlConnection sqlcon1 = new SqlConnection(ConnectionString.con))
+                        {
+                            string query2 = "Select IsLogged From Accounts Where Username='" + Session["Username"] + "'";
+                            SqlCommand cm = new SqlCommand();
+                            cm.CommandText = query2;
+                            cm.Connection = sqlcon1;
+                            SqlDataAdapter dfs = new SqlDataAdapter();
+                            dfs.SelectCommand = cm;
+                            DataSet dgs = new DataSet();
+                            dfs.Fill(dgs);
+                            if (dgs.Tables[0].Rows.Count > 0)
+                            {
+                                var v = dgs.Tables[0].Rows[0]["IsLogged"].ToString();
+                                if (v == "false")
+                                {
+                                    Response.Redirect("StudentFirstLogin.aspx");
+                                    return;
+                                }
+                                else
+                                {
+
+                                   // Response.Redirect("student_home.aspx");
+                                    return;
+                                }
+
+                            }
+                        }
+                       // ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "Elev();", true);
                         //Response.Redirect("ElevPage");
-                        return;
+                         
                     }
                 }
                 else

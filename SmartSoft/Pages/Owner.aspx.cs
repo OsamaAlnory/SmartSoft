@@ -30,6 +30,10 @@ namespace SmartSoft.Pages
             {
                 //Response.Redirect("LogIn_Page.aspx");
             }
+
+
+
+
             object[] objs = Main.GetDBValue("Accounts", "Username", new string[] { "UType" }, new string[] { "1" });
             object[] ids = Main.GetDBValue("Accounts", "ID", new string[] { "UType" }, new string[] { "1" });
             string A = "";

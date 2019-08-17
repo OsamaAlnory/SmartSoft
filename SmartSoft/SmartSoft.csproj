@@ -78,6 +78,7 @@
     <Content Include="css\jquery-ui.css" />
     <Content Include="css\lightbox.css" />
     <Content Include="css\main.css" />
+    <Content Include="css\material-dashboard.css" />
     <Content Include="css\monthly.css" />
     <Content Include="css\morris.css" />
     <Content Include="css\style.css" />
@@ -131,29 +132,55 @@
     <Content Include="images\rightw.gif" />
     <Content Include="images\right_arrow.png" />
     <Content Include="images\search.png" />
+    <Content Include="images\sidebar-1.jpg" />
     <Content Include="images\smile.png" />
     <Content Include="images\tick.png" />
     <Content Include="images\tick1.png" />
+    <Content Include="js\arrive.min.js" />
     <Content Include="js\base.js" />
+    <Content Include="js\bootstrap-datetimepicker.min.js" />
+    <Content Include="js\bootstrap-material-design.min.js" />
+    <Content Include="js\bootstrap-notify.js" />
+    <Content Include="js\bootstrap-selectpicker.js" />
+    <Content Include="js\bootstrap-tagsinput.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\Chart.js" />
+    <Content Include="js\chartist.min.js" />
+    <Content Include="js\fullcalendar.min.js" />
+    <Content Include="js\jasny-bootstrap.min.js" />
     <Content Include="js\jquery-2.1.4.min.js" />
+    <Content Include="js\jquery-jvectormap.js" />
     <Content Include="js\jquery-ui.js" />
     <Content Include="js\jquery.basictable.min.js" />
+    <Content Include="js\jquery.bootstrap-wizard.js" />
+    <Content Include="js\jquery.dataTables.min.js" />
     <Content Include="js\jquery.jqcandlestick.min.js" />
+    <Content Include="js\jquery.min.js" />
     <Content Include="js\jquery.nicescroll.js" />
+    <Content Include="js\jquery.validate.min.js" />
     <Content Include="js\lightbox-plus-jquery.min.js" />
     <Content Include="js\main.js" />
+    <Content Include="js\material-dashboard.js" />
+    <Content Include="js\moment.min.js" />
     <Content Include="js\monthly.js" />
     <Content Include="js\morris.js" />
+    <Content Include="js\nouislider.min.js" />
+    <Content Include="js\perfect-scrollbar.jquery.min.js" />
+    <Content Include="js\popper.min.js" />
     <Content Include="js\raphael-min.js" />
     <Content Include="js\scripts.js" />
     <Content Include="js\sender.js" />
+    <Content Include="js\sweetalert2.js" />
+    <Content Include="Pages\AccountsBy_Admin.aspx" />
     <Content Include="Pages\AdminFirstLogin.aspx" />
+    <Content Include="Pages\Admin_home.aspx" />
+    <Content Include="Pages\Admin_Profile.aspx" />
     <Content Include="Pages\AJ.aspx" />
     <Content Include="Pages\Forgot_Password.aspx" />
     <Content Include="Pages\LogIn_Page.aspx" />
     <Content Include="Pages\Owner.aspx" />
+    <Content Include="Pages\School_Classes.aspx" />
+    <Content Include="Pages\School_Courses.aspx" />
     <Content Include="vendor\animate\animate.css" />
     <Content Include="vendor\animsition\css\animsition.css" />
     <Content Include="vendor\animsition\css\animsition.min.css" />
@@ -191,6 +218,13 @@
     <Compile Include="Database\Fields.cs" />
     <Compile Include="Database\Producer.cs" />
     <Compile Include="Main.cs" />
+    <Compile Include="Pages\AccountsBy_Admin.aspx.cs">
+      <DependentUpon>AccountsBy_Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AccountsBy_Admin.aspx.designer.cs">
+      <DependentUpon>AccountsBy_Admin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Admin.Master.cs">
       <DependentUpon>Admin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -204,6 +238,20 @@
     </Compile>
     <Compile Include="Pages\AdminFirstLogin.aspx.designer.cs">
       <DependentUpon>AdminFirstLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin_home.aspx.cs">
+      <DependentUpon>Admin_home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin_home.aspx.designer.cs">
+      <DependentUpon>Admin_home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin_Profile.aspx.cs">
+      <DependentUpon>Admin_Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin_Profile.aspx.designer.cs">
+      <DependentUpon>Admin_Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\AJ.aspx.cs">
       <DependentUpon>AJ.aspx</DependentUpon>
@@ -246,6 +294,20 @@
     </Compile>
     <Compile Include="Pages\Owner.aspx.designer.cs">
       <DependentUpon>Owner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\School_Classes.aspx.cs">
+      <DependentUpon>School_Classes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\School_Classes.aspx.designer.cs">
+      <DependentUpon>School_Classes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\School_Courses.aspx.cs">
+      <DependentUpon>School_Courses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\School_Courses.aspx.designer.cs">
+      <DependentUpon>School_Courses.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
