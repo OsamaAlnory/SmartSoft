@@ -10,12 +10,12 @@ using System.Web.UI.WebControls;
 
 namespace SmartSoft.Pages
 {
-    public partial class Owner : System.Web.UI.Page, IPostBackEventHandler
+    public partial class Owner : System.Web.UI.Page
     {
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ClientScript.GetPostBackEventReference(this, string.Empty);
+            //ClientScript.GetPostBackEventReference(this, string.Empty);
             var _x = Request.QueryString["old"];
             if (_x != null)
             {
@@ -24,15 +24,12 @@ namespace SmartSoft.Pages
             if (Session["Username"] != null)
             {
                 Loggedlbl.Text = Session["Username"].ToString();
-                return;
+                //return;
             }
             else
             {
                 //Response.Redirect("LogIn_Page.aspx");
             }
-
-
-
 
             object[] objs = Main.GetDBValue("Accounts", "Username", new string[] { "UType" }, new string[] { "1" });
             object[] ids = Main.GetDBValue("Accounts", "ID", new string[] { "UType" }, new string[] { "1" });
@@ -58,7 +55,9 @@ namespace SmartSoft.Pages
             //ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "get();", true);
             if (username.Text == "" && password.Text == "" && school.Text == "")
             {
-                Main.Reg(this, "showError('Fyll i alla fälten.')");
+                //
+                Main.Reg(this, "ref()");
+                //Main.Reg(this, "showError('Fyll i alla fälten.')");
                 return;
             }
             else
@@ -67,14 +66,13 @@ namespace SmartSoft.Pages
                 Main.AddTo(Producer.AddAccount, Fields.ACCOUNT, 0,
                 username.Text, password.Text, 1, school.Text, "false", epost.Text);
                 Clear();
-        
             }
-            
+            Main.Reg(Page, "ref()");
         }
 
         void Clear()
         {
-            username.Text = password.Text = school.Text="";
+            username.Text = password.Text = school.Text = epost.Text = "";
         }
 
         //Encrypt Password

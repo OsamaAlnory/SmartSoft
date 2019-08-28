@@ -5,6 +5,8 @@
             <asp:HiddenField ID="_AdminId" runat="server" />
                 <asp:ScriptManager ID="ScriptManager1" runat="server">
             </asp:ScriptManager>
+                                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
      <div class="container text-center egen">
             <div class="row">
                 <div class="col-md-6">
@@ -12,13 +14,9 @@
                 </div>
               
                  <div class="col-md-6">
-                                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                <ContentTemplate>
                     <h3>
                         <asp:Label ID="Loggedlbl" runat="server"></asp:Label>
                     </h3>
-                    </ContentTemplate>
-                                     </asp:UpdatePanel>
                      <asp:Button CssClass="logut_btn" OnClick="btn_logut_Click"  ID="btn_logut" runat="server" Text="Logga Ut" />
                  </div>
             </div>
@@ -102,6 +100,8 @@
 <%--         <asp:Button runat="server" ID="uselessButton" OnClick="uselessButton_Click"/>--%>
          </div>
          </div>
+                    </ContentTemplate>
+                                         </asp:UpdatePanel>
       <script> 
 
           $(document).ready(function () {
@@ -109,6 +109,7 @@
           });
 
           function ref() {
+              alert('5ra');
               var bla = $('#<%=some_cr.ClientID%>').val();
               var a = bla.split(",");
               var _html = "";
