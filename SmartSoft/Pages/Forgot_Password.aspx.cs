@@ -61,7 +61,7 @@ namespace SmartSoft.Pages
             SmtpClient smtp = new SmtpClient();
             smtp.Host = "smtp.gmail.com";
             smtp.Port = 587;
-            smtp.Credentials = new System.Net.NetworkCredential("mohanad.oweidat@elev.ga.ntig.se", "MohanadRambo2000");
+            smtp.Credentials = new System.Net.NetworkCredential("mohanad.oweidat@elev.ga.ntig.se", "mohanadRambo2000");
             smtp.EnableSsl = true;
             MailMessage msg = new MailMessage();
             msg.Subject = "Glömt Lösenord (Smartsoft)";
