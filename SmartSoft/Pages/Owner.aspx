@@ -3,6 +3,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
             <asp:HiddenField ID="_AdminId" runat="server" />
+                <asp:ScriptManager ID="ScriptManager1" runat="server">
+            </asp:ScriptManager>
      <div class="container text-center egen">
             <div class="row">
                 <div class="col-md-6">
@@ -10,10 +12,13 @@
                 </div>
               
                  <div class="col-md-6">
+                                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
                     <h3>
                         <asp:Label ID="Loggedlbl" runat="server"></asp:Label>
-
                     </h3>
+                    </ContentTemplate>
+                                     </asp:UpdatePanel>
                      <asp:Button CssClass="logut_btn" OnClick="btn_logut_Click"  ID="btn_logut" runat="server" Text="Logga Ut" />
                  </div>
             </div>
@@ -96,10 +101,6 @@
          <input id="some_cr" runat="server" type="hidden"/>
 <%--         <asp:Button runat="server" ID="uselessButton" OnClick="uselessButton_Click"/>--%>
          </div>
-         <button type="button" onclick="klick()">Clicka</button>
-         <button type='button' onclick="JavaScript:window.location.hash = '#1'">Navigate without refresh
-</button>
-         <input type="button" />
          </div>
       <script> 
 
@@ -127,14 +128,6 @@
           function del(_id) {
               var pageId = '<%=  Page.ClientID %>';
               __doPostBack(pageId, "delete:" + _id.id);
-          }
-
-          function klick() {
-              try {
-                  var xmlhttp = new XMLHttpRequest();
-                  xmlhttp.open("GET", "AdminFirstLogin.aspx?old=Hello", false);
-                  xmlhttp.send(null);
-              } catch (e) { alert(e);}
           }
 
     </script>
