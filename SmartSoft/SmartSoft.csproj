@@ -181,6 +181,7 @@
     <Content Include="Pages\Owner.aspx" />
     <Content Include="Pages\School_Classes.aspx" />
     <Content Include="Pages\School_Courses.aspx" />
+    <Content Include="Pages\StudentFirstLogin.aspx" />
     <Content Include="vendor\animate\animate.css" />
     <Content Include="vendor\animsition\css\animsition.css" />
     <Content Include="vendor\animsition\css\animsition.min.css" />
@@ -308,6 +309,13 @@
     </Compile>
     <Compile Include="Pages\School_Courses.aspx.designer.cs">
       <DependentUpon>School_Courses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\StudentFirstLogin.aspx.cs">
+      <DependentUpon>StudentFirstLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\StudentFirstLogin.aspx.designer.cs">
+      <DependentUpon>StudentFirstLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

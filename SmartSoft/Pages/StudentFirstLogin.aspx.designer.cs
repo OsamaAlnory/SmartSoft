@@ -10,105 +10,78 @@
 namespace SmartSoft.Pages {
     
     
-    public partial class AccountsBy_Admin {
+    public partial class StudentFirstLogin {
         
         /// <summary>
-        /// student_usernmae control.
+        /// _dittnamn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText student_usernmae;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText _dittnamn;
         
         /// <summary>
-        /// student_pass control.
+        /// _Gatunamn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword student_pass;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText _Gatunamn;
         
         /// <summary>
-        /// student_epost control.
+        /// _Postnummer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl student_epost;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl _Postnummer;
         
         /// <summary>
-        /// school_dropdown control.
+        /// _Stad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList school_dropdown;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText _Stad;
         
         /// <summary>
-        /// add_students control.
+        /// Phonenr control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputButton add_students;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Phonenr;
         
         /// <summary>
-        /// teacher_username control.
+        /// FileUpload1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText teacher_username;
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
         
         /// <summary>
-        /// teacher_pass control.
+        /// upload_btn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword teacher_pass;
+        protected global::System.Web.UI.HtmlControls.HtmlButton upload_btn;
         
         /// <summary>
-        /// teacher_epost control.
+        /// CopyRights control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl teacher_epost;
-        
-        /// <summary>
-        /// teacher_dropdownlist control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList teacher_dropdownlist;
-        
-        /// <summary>
-        /// add_teachers control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputButton add_teachers;
-        
-        /// <summary>
-        /// add_parents control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton add_parents;
+        protected global::System.Web.UI.WebControls.Label CopyRights;
     }
 }
