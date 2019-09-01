@@ -1,5 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Admin.Master" AutoEventWireup="true" CodeBehind="School_Courses.aspx.cs" Inherits="SmartSoft.Pages.School_Courses" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Admin.Master" AutoEventWireup="true" Async="true" CodeBehind="School_Courses.aspx.cs" Inherits="SmartSoft.Pages.School_Courses" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+    <style>
+
+        .egen{
+            background-color:whitesmoke !important;
+            padding:6px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <center>
@@ -37,47 +45,31 @@
                     <thead class="text-primary">
                       
                      <th>Kursnamn</th> 
-                      <th>Lärare</th>
-                        <th>Klass</th>
+                      <th>Lärare|Välj en:</th>
+                        <th>Klass|Välj en:</th>
                        
                     </thead>
                     <tbody>
                       <tr>
                         
-                        <td><asp:TextBox CssClass="form-control" ID="klassnamn" runat="server"></asp:TextBox></td>
+                        <td><asp:TextBox CssClass="form-control egen" placeholder="Skriv här.." ID="Kursnamn" runat="server"></asp:TextBox></td>
                         <td>
-                            <asp:DropDownList CssClass="form-control" ID="DropDownList1" runat="server">
-                            <asp:ListItem>-------| Välj En</asp:ListItem>
-                            <asp:ListItem>Yosef</asp:ListItem>
-                            <asp:ListItem>Martin</asp:ListItem>
-                            <asp:ListItem>Nayef</asp:ListItem>
-                            </asp:DropDownList>
-
-                        </td>
-
-                           <td>
-                            <asp:DropDownList CssClass="form-control" ID="DropDownList2" runat="server">
-                            <asp:ListItem>-------| Välj En</asp:ListItem>
-                            <asp:ListItem>2_tek1</asp:ListItem>
-                            <asp:ListItem>3_tek2</asp:ListItem>
-                            <asp:ListItem>3_IT2</asp:ListItem>
-                            </asp:DropDownList>
-
-                        </td>
-                        <td> <asp:Button CssClass="btn btn-primary pull-right" ID="addklass" runat="server" Text="Lägg till"></asp:Button></td>
+                            <asp:DropDownList CssClass="form-control egen" DataTextField="Teacher" DataValueField="ID" ID="Teacher_dropdown" runat="server">
+                             </asp:DropDownList>
+                         </td>
+                            <td>
+                            <asp:DropDownList CssClass="form-control egen" DataTextField="Class" DataValueField="ID"  ID="Class_dropdown" runat="server">
+                             </asp:DropDownList>
+                         </td>
+                        <td> <asp:Button CssClass="btn btn-primary pull-right" ID="addkurs" runat="server" OnClick="addkurs_Click"  Text="Lägg till"></asp:Button></td>
                       </tr>
-                     
-                    
-                    
-                    </tbody>
+                     </tbody>
                   </table>
                 </div>
               </div>
             </div>
             </div>
-
-
-            <!-- Show Courses-->
+             <!-- Show Courses-->
           <div class="row">
                  <div class="col-md-12">
               <div class="card">
@@ -85,11 +77,30 @@
                   <h4 class="card-title ">Kurser</h4>
                  </div>
                 <div class="card-body">
-                  <div class="table-responsive">
+                         <asp:GridView CssClass="table table-hover" ID="Course_Grid" runat="server" RowHeaderColumn="0" 
+                   HeaderStyle-BackColor="#b922d4" HeaderStyle-Font-Bold="true" 
+                   HeaderStyle-ForeColor="White" RowStyle-BackColor="WhiteSmoke" 
+               DataSourceID="SqlDataSource1" AutoGenerateColumns="false" AllowSorting="true" Font-Size="Small"
+                GridLines="Both">
+
+                           <Columns>
+                        <asp:BoundField DataField="CourseName" HeaderText="Kursnamn" 
+                   SortExpression="CourseName" />
+
+                        <asp:BoundField DataField="Teacher" HeaderText="Läraren" 
+                   SortExpression="Teacher" />
+
+                               <asp:BoundField DataField="Class" HeaderText="Klassen" 
+                   SortExpression="Class" />
+                               </Columns>
+                          </asp:GridView>
+
+                      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="data source=89.221.254.36;initial catalog=MSSQL600027;persist security info=True;user id=MSSQL600027;password=Nzo1MDoxNQ;MultipleActiveResultSets=True;App=EntityFramework"
+                   SelectCommand="SELECT [CourseName],[Teacher], [Class] FROM [Courses]"></asp:SqlDataSource>
+                  <%--<div class="table-responsive">
                     <table class="table">
                       <thead class=" text-primary">
-                        
-                        <th>
+                         <th>
                           Kursnamn
                         </th>
                         <th>
@@ -101,8 +112,7 @@
                         </thead>
                       <tbody>
                         <tr>
-                          
-                          <td>
+                           <td>
                             Dakota Rice
                           </td>
                           <td>
@@ -113,8 +123,7 @@
                           </td>
                          </tr>
                         <tr>
-                           
-                          <td>
+                           <td>
                             Minerva Hooper
                           </td>
                           <td>
@@ -174,21 +183,20 @@
                          </tr>
                       </tbody>
                     </table>
-                  </div>
+                  </div>--%>
                 </div>
               </div>
             </div>
   		 </div>
-
-
-
+             
         </div>
-      </div>
-
-
-
-
-
+      </div> 
          </div>
     </center>
+
+      <script>
+        function hello() {
+            alert('sad');
+        }
+    </script>
 </asp:Content>

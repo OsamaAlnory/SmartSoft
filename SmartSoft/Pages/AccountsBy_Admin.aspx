@@ -65,12 +65,8 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>School</label>
-                                            <asp:DropDownList CssClass="form-control" ID="school_dropdown" runat="server">
-                                                <asp:ListItem>---------|Välj en skola</asp:ListItem>
-                                                <asp:ListItem>Nti-Gymnasiet</asp:ListItem>
-                                                <asp:ListItem>Olympiaskolan</asp:ListItem>
-                                                <asp:ListItem>LBS</asp:ListItem>
-                                                <asp:ListItem>Procivitas</asp:ListItem>
+                                            <asp:DropDownList CssClass="form-control" DataValueField="ID" DataTextField="School" ID="school_dropdown" runat="server">
+                                               
                                             </asp:DropDownList>
                                         </div>
                                     </div>
@@ -114,12 +110,8 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>School</label>
-                                            <asp:DropDownList CssClass="form-control" ID="teacher_dropdownlist" runat="server">
-                                                <asp:ListItem>---------|Välj en skola</asp:ListItem>
-                                                <asp:ListItem>Nti-Gymnasiet</asp:ListItem>
-                                                <asp:ListItem>Olympiaskolan</asp:ListItem>
-                                                <asp:ListItem>LBS</asp:ListItem>
-                                                <asp:ListItem>Procivitas</asp:ListItem>
+                                            <asp:DropDownList CssClass="form-control" DataValueField="ID" DataTextField="School" ID="teacher_dropdownlist" runat="server">
+                                                
                                             </asp:DropDownList>
                                         </div>
                                     </div>

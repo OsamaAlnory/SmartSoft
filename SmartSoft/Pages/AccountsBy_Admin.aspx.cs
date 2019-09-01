@@ -1,6 +1,7 @@
 ﻿using SmartSoft.Database;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -12,14 +13,28 @@ namespace SmartSoft.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
- 
+            //Get School (Dropdown Auto fill)
+            using (SqlConnection con = new SqlConnection(Database.ConnectionString.con))
+            {
+                SqlCommand cmd = new SqlCommand("Select ID,School from Accounts Where Username='" + Session["Username"] + "'", con);
+                con.Open();
+                school_dropdown.DataSource = cmd.ExecuteReader();
+                school_dropdown.DataBind();
+                SqlCommand cmd2 = new SqlCommand("Select ID,School from Accounts Where Username='" + Session["Username"] + "'", con);
+                teacher_dropdownlist.DataSource = cmd2.ExecuteReader();
+                teacher_dropdownlist.DataBind();
+                con.Close();
+
+            }
+
             add_students.ServerClick += Add_student_ServerClick;
             add_teachers.ServerClick += Add_teachers_ServerClick;
             add_parents.ServerClick += Add_parents_ServerClick;
           
         }
 
-        //Here (Addar inte) else sektion funkar inte (den läser inte värdet av input)
+        /*Here (Addar inte) else sektion funkar inte (den läser inte värdet av input) 
+        bara if sektion funkar även om det finns data i input boxes*/
         private void Add_teachers_ServerClick(object sender, EventArgs e)
         {
              
@@ -35,7 +50,7 @@ namespace SmartSoft.Pages
             {
 
                 Main.AddTo(Producer.AddAccount, Fields.ACCOUNT, 0,
-               teacher_username.Value, teacher_pass.Value, 2, teacher_dropdownlist.SelectedValue, "false", teacher_epost.Value);
+               teacher_username.Value, teacher_pass.Value, 2, teacher_dropdownlist.SelectedItem.Text, "false", teacher_epost.Value);
                 Clear_teacher();
                
 
@@ -65,7 +80,7 @@ namespace SmartSoft.Pages
             {
 
                 Main.AddTo(Producer.AddAccount, Fields.ACCOUNT, 0,
-              student_usernmae.Value, student_pass.Value, 3, school_dropdown.SelectedValue, "false", student_epost.Value);
+              student_usernmae.Value, student_pass.Value, 3, school_dropdown.SelectedItem.Text, "false", student_epost.Value);
                 Clear_students();
 
             }

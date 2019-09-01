@@ -8,6 +8,8 @@ namespace SmartSoft.Database
     public enum Producer
     {
         AddAccount,
-        
+        AddClass,
+        AddCourse,
+
     }
 }
