@@ -11,16 +11,50 @@ namespace SmartSoft.Database
     public class Main
     {
         public static SqlConnection con = new SqlConnection(ConnectionString.con);
+        private static char[] chars = {
+        '0','1','2','3','4','5','6','7','8','9','-','_','.','@',
+        'a','b','c','d','e','f','g','h','i','j','k',
+        'l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E',
+        'F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X',
+        'Y','Z'};
+        private static Random random = new Random();
+
+        public static string convert(string code)
+        {
+            if (code.Length % 2 != 0)
+            {
+                //ERR
+                return code;
+            }
+            //charStart = 14;
+            string newCode = "";
+            for(int x = 0; x < code.Length/2; x++)
+            {
+                int num = int.Parse(code.Substring(x*2, 2));
+                newCode += chars[num];
+            }
+            return newCode;
+        }
 
         public static void Send(Page page, string text)
         {
             ScriptManager.RegisterStartupScript(page, page.GetType(), 
-                "text", "alert('"+text+ "')", true);
+                "text"+random.Next(100000), "alert('"+text+ "');", true);
+        }
+
+        public static void SendError(Page page, string msg)
+        {
+            Reg(page, "showError('"+msg+"')");
+        }
+
+        public static void SendSuccess(Page page, string msg)
+        {
+            Reg(page, "showSuccess('"+msg+"')");
         }
 
         public static void Reg(Page page, string func)
         {
-            Reg(page, "text", func);
+            Reg(page, "text"+random.Next(10000), func);
         }
 
         //public static FileType GetFileType(string contentType)
@@ -51,7 +85,7 @@ namespace SmartSoft.Database
 
         public static void Reg(Page page, string key, string func)
         {
-            ScriptManager.RegisterStartupScript(page, page.GetType(), key, func, true);
+            ScriptManager.RegisterStartupScript(page, page.GetType(), key, func+";", true);
         }
 
 
@@ -110,12 +144,14 @@ namespace SmartSoft.Database
             return _val;
         }
 
-        public static void AddTo(Producer prod, Fields fields, params object[] obj)
+        public static async void AddTo(Producer prod, Fields fields, Loadable l, 
+            params object[] obj)
         {
-            AddTo(prod, fields.getFields(), obj);
+            AddTo(prod, fields.getFields(), l, obj);
         }
 
-        public static async void AddTo(Producer prod, string[] fields, params object[] obj)
+        public static async void AddTo(Producer prod, string[] fields, Loadable l, 
+            params object[] obj)
         {
             if (con.State == ConnectionState.Closed)
             {
@@ -128,6 +164,10 @@ namespace SmartSoft.Database
             }
             await sql.ExecuteNonQueryAsync();
             con.Close();
+            if(l != null)
+            {
+                l.OnFinish("DB");
+            }
         }
 
     }

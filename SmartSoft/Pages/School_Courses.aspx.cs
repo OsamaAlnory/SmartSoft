@@ -50,15 +50,11 @@ namespace SmartSoft.Pages
             else
             {
 
-                Main.AddTo(Producer.AddCourse, Fields.COURSES, 0,
+               Main.AddTo(Producer.AddCourse, Fields.COURSES, null, 0,
                Kursnamn.Text, Teacher_dropdown.SelectedItem,Class_dropdown.SelectedItem);
-                Clear_AddCourses();
-
-
+               Clear_AddCourses();
             }
             Clear_AddCourses();
-
-
         }
 
         void Clear_AddCourses()
