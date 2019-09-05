@@ -15,7 +15,8 @@
         <div class="container-fluid">
           <div class="navbar-wrapper">
             <a class="navbar-brand" href="#pablo">
-                 <p>skolans namn</p>
+                <asp:Label runat="server" ID="school_name" Text="Skolnamn"></asp:Label>
+                 
             </a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,28 +46,28 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Username</label>
-                                            <input type="text" runat="server" id="student_usernmae" name="student_username" class="form-control">
+                                            <label>Användarnamn</label>
+                                            <input type="text" runat="server" id="s_name" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Password</label>
-                                            <input runat="server" name="student_pass" id="student_pass" type="password" class="form-control">
+                                            <label>Lösenord</label>
+                                            <input runat="server" id="s_pass" type="password" class="form-control">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Email</label>
-                                            <input runat="server" name="student_epost" id="student_epost" type="email" class="form-control">
+                                            <label>E-mail</label>
+                                            <input runat="server" id="s_post" type="email" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>School</label>
-                                            <asp:DropDownList CssClass="form-control" DataValueField="ID" DataTextField="School" ID="school_dropdown" runat="server">
+                                            <label>Skola</label>
+                                            <asp:DropDownList CssClass="form-control" DataValueField="ID" DataTextField="School" ID="s_drop" runat="server">
                                                
                                             </asp:DropDownList>
                                         </div>
@@ -88,13 +89,13 @@
                                  <div class="row">
                                      <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Username</label>
+                                            <label>Användarnamn</label>
                                             <input runat="server" id="t_name" type="text" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Password</label>
+                                            <label>Lösenord</label>
                                             <input runat="server" id="t_pass" type="password" class="form-control">
                                         </div>
                                     </div>
@@ -109,7 +110,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>School</label>
+                                            <label>Skola</label>
                                             <asp:DropDownList CssClass="form-control" DataValueField="ID" DataTextField="School" ID="t_drop" runat="server">
                                                 
                                             </asp:DropDownList>
@@ -133,13 +134,13 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Username</label>
+                                            <label>Användarnamn</label>
                                             <input runat="server" id="us" type="text" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Email address</label>
+                                            <label>E-mail</label>
                                             <input type="email" class="form-control">
                                         </div>
                                     </div>
@@ -147,13 +148,13 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Fist Name</label>
+                                            <label>Förnamn</label>
                                             <input type="text" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Last Name</label>
+                                            <label>Efternamn</label>
                                             <input type="text" class="form-control">
                                         </div>
                                     </div>
@@ -169,13 +170,13 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>City</label>
+                                            <label>Stad</label>
                                             <input type="text" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Country</label>
+                                            <label>Land</label>
                                             <input type="text" class="form-control">
                                         </div>
                                     </div>

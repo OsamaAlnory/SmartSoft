@@ -31,40 +31,49 @@ namespace SmartSoft.Pages {
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// student_usernmae control.
+        /// school_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText student_usernmae;
+        protected global::System.Web.UI.WebControls.Label school_name;
         
         /// <summary>
-        /// student_pass control.
+        /// s_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword student_pass;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText s_name;
         
         /// <summary>
-        /// student_epost control.
+        /// s_pass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl student_epost;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword s_pass;
         
         /// <summary>
-        /// school_dropdown control.
+        /// s_post control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList school_dropdown;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl s_post;
+        
+        /// <summary>
+        /// s_drop control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList s_drop;
         
         /// <summary>
         /// add_students control.

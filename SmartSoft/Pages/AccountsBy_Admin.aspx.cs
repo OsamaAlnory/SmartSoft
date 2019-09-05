@@ -18,15 +18,18 @@ namespace SmartSoft.Pages
             {
                 SqlCommand cmd = new SqlCommand("Select ID,School from Accounts Where Username='" + Session["Username"] + "'", con);
                 con.Open();
-                school_dropdown.DataSource = cmd.ExecuteReader();
-                school_dropdown.DataBind();
+                s_drop.DataSource = cmd.ExecuteReader();
+                s_drop.DataBind();
                 SqlCommand cmd2 = new SqlCommand("Select ID,School from Accounts Where Username='" + Session["Username"] + "'", con);
                 t_drop.DataSource = cmd2.ExecuteReader();
                 t_drop.DataBind();
                 con.Close();
             }
-            school_dropdown.Items.Add("Hello");
-            t_drop.Items.Add("Hello");
+            if(Session["Username"] != null)
+            {
+                string _sc = Main.GetDBValue("Accounts", "School", new string[] { "Username" }, new string[] { Session["Username"].ToString() })[0].ToString();
+                school_name.Text = _sc;
+            }
             add_students.ServerClick += Add_student_ServerClick;
             add_teachers.ServerClick += Add_teachers_ServerClick;
             add_parents.ServerClick += Add_parents_ServerClick;
@@ -74,8 +77,8 @@ namespace SmartSoft.Pages
 
         private void Add_student_ServerClick(object sender, EventArgs e)
         {
-            student_pass.Value = EncryptPassword(student_pass.Value);
-            if (student_usernmae.Value == "" || student_pass.Value == "" || school_dropdown.SelectedValue == "" || student_epost.Value == "")
+            s_pass.Value = EncryptPassword(s_pass.Value);
+            if (s_name.Value == "" || s_pass.Value == "" || s_drop.SelectedValue == "" || s_post.Value == "")
             {
                 Main.Reg(this, "showError('Fyll i alla fälten.')");
                 return;
@@ -83,8 +86,8 @@ namespace SmartSoft.Pages
             else
             {
                 Main.AddTo(Producer.AddAccount, Fields.ACCOUNT, null, 0,
-                student_usernmae.Value, student_pass.Value, 3, 
-                school_dropdown.SelectedItem.Text, "false", student_epost.Value);
+                s_name.Value, s_pass.Value, 3,
+                s_drop.SelectedItem.Text, "false", s_post.Value);
                 Clear_students();
                 Main.Reg(this, "showSuccess('Success!')");
             }
@@ -98,8 +101,8 @@ namespace SmartSoft.Pages
 
         private void Clear_students()
         {
-            student_usernmae.Value = student_pass.Value = student_epost.Value = "";
-            school_dropdown.SelectedValue = null;
+            s_name.Value = s_pass.Value = s_post.Value = "";
+            s_drop.SelectedValue = null;
         }
 
         //Encrypt Password
