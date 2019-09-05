@@ -10,12 +10,13 @@ using System.Web.UI.WebControls;
 
 namespace SmartSoft.Pages
 {
-    public partial class Owner : System.Web.UI.Page
+    public partial class Owner : System.Web.UI.Page, Loadable
     {
 
         protected void Page_Load(object sender, EventArgs e)
         {
             //ClientScript.GetPostBackEventReference(this, string.Empty);
+            //Main.Send(this, Main.convert("2832142614"));
             var _x = Request.QueryString["old"];
             if (_x != null)
             {
@@ -30,7 +31,11 @@ namespace SmartSoft.Pages
             {
                 //Response.Redirect("LogIn_Page.aspx");
             }
+            Load();
+        }
 
+        private void Load()
+        {
             object[] objs = Main.GetDBValue("Accounts", "Username", new string[] { "UType" }, new string[] { "1" });
             object[] ids = Main.GetDBValue("Accounts", "ID", new string[] { "UType" }, new string[] { "1" });
             string A = "";
@@ -50,27 +55,26 @@ namespace SmartSoft.Pages
 
         protected void btn_add_Click(object sender, EventArgs e)
         {
-            
             password.Text = EncryptPassword(password.Text);
-            //ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "get();", true);
-            if (username.Text == "" && password.Text == "" && school.Text == "")
+            if (username.Text == "" || password.Text == "" || epost.Text == "" ||
+                school.Text == "")
             {
-                //
-                Main.Reg(this, "ref()");
-                //Main.Reg(this, "showError('Fyll i alla fälten.')");
-                return;
+                // The below line is causing the whole - kind of - page to move to the
+                // left, once clicking on Ok.
+                Main.SendError(this, "Fyll i alla fälten.");
             }
             else
             {
-                 
-                Main.AddTo(Producer.AddAccount, Fields.ACCOUNT, 0,
+                Main.AddTo(Producer.AddAccount, Fields.ACCOUNT, this, 0,
                 username.Text, password.Text, 1, school.Text, "false", epost.Text);
                 Clear();
+                tim.Enabled = true;
+                tim.Interval = 1000;
             }
             Main.Reg(Page, "ref()");
         }
 
-        void Clear()
+        private void Clear()
         {
             username.Text = password.Text = school.Text = epost.Text = "";
         }
@@ -112,6 +116,18 @@ namespace SmartSoft.Pages
                     con.Close();
                 }
             }
+        }
+
+        public void OnFinish(string id)
+        {
+            Main.Reg(Page, "ref()");
+        }
+
+        protected void tim_Tick(object sender, EventArgs e)
+        {
+            tim.Enabled = false;
+            Main.Reg(Page, "ref()");
+            Main.SendSuccess(this, "Kontot har lagts till!");
         }
 
     }

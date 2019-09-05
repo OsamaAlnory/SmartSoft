@@ -13,6 +13,24 @@ namespace SmartSoft.Pages {
     public partial class AccountsBy_Admin {
         
         /// <summary>
+        /// ScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        
+        /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        
+        /// <summary>
         /// student_usernmae control.
         /// </summary>
         /// <remarks>
@@ -58,40 +76,40 @@ namespace SmartSoft.Pages {
         protected global::System.Web.UI.HtmlControls.HtmlInputButton add_students;
         
         /// <summary>
-        /// teacher_username control.
+        /// t_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText teacher_username;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText t_name;
         
         /// <summary>
-        /// teacher_pass control.
+        /// t_pass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword teacher_pass;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword t_pass;
         
         /// <summary>
-        /// teacher_epost control.
+        /// t_post control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl teacher_epost;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl t_post;
         
         /// <summary>
-        /// teacher_dropdownlist control.
+        /// t_drop control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList teacher_dropdownlist;
+        protected global::System.Web.UI.WebControls.DropDownList t_drop;
         
         /// <summary>
         /// add_teachers control.
@@ -101,6 +119,15 @@ namespace SmartSoft.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputButton add_teachers;
+        
+        /// <summary>
+        /// us control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText us;
         
         /// <summary>
         /// add_parents control.

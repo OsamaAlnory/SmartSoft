@@ -97,6 +97,7 @@
               </div>
                 </div>
          <input id="some_cr" runat="server" type="hidden"/>
+                <asp:Timer runat="server" ID="tim" OnTick="tim_Tick"></asp:Timer>
 <%--         <asp:Button runat="server" ID="uselessButton" OnClick="uselessButton_Click"/>--%>
          </div>
          </div>
@@ -109,7 +110,6 @@
           });
 
           function ref() {
-              alert('5ra');
               var bla = $('#<%=some_cr.ClientID%>').val();
               var a = bla.split(",");
               var _html = "";

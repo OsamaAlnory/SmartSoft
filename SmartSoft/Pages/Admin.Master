@@ -9,6 +9,8 @@
     <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/sweetalert2.css" />
+    <script src="../css/sweetalert2.all.min.js"></script>
 
   <!-- CSS Files -->
   <link href="../css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
@@ -18,8 +20,6 @@
 </head>
 <body class="">
     <form id="form1" runat="server">
-                        <asp:ScriptManager ID="ScriptManager1" runat="server">
-            </asp:ScriptManager>
         <div class="wrapper">
            <div class="sidebar" data-color="purple" data-background-color="white" data-image="../images/sidebar-1.jpg">
                 <!--
@@ -169,7 +169,8 @@
         </div>
 
 
-
+                <script src="../js/base.js"></script>
+    <script src="../js/sender.js"></script>
          <!--   Core JS Files   -->
   <script src="../js/jquery.min.js"></script>
   <script src="../js/popper.min.js"></script>

@@ -86,6 +86,7 @@
     <Content Include="css\sweetalert2.css" />
     <Content Include="css\table-style.css" />
     <Content Include="css\util.css" />
+    <Content Include="Database\PG.aspx" />
     <Content Include="fonts\font-awesome-4.7.0\css\font-awesome.css" />
     <Content Include="fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
     <Content Include="fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
@@ -217,7 +218,15 @@
   <ItemGroup>
     <Compile Include="Database\ConnectionString.cs" />
     <Compile Include="Database\Fields.cs" />
+    <Compile Include="Database\PG.aspx.cs">
+      <DependentUpon>PG.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Database\PG.aspx.designer.cs">
+      <DependentUpon>PG.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Database\Producer.cs" />
+    <Compile Include="Loadable.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Pages\AccountsBy_Admin.aspx.cs">
       <DependentUpon>AccountsBy_Admin.aspx</DependentUpon>

@@ -31,7 +31,7 @@ namespace SmartSoft.Pages
             else
             {
 
-                Main.AddTo(Producer.AddClass, Fields.CLASSES, 0,
+               Main.AddTo(Producer.AddClass, Fields.CLASSES, null, 0,
                klassnamn.Text, teachernamn.Text, Session["Username"]);
                Clear_AddClasses();
 
