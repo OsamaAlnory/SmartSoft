@@ -50,8 +50,6 @@ namespace SmartSoft.Pages
             Main.Send(this, A);
         }
 
-        /*Here (Addar inte) else sektion funkar inte (den läser inte värdet av input) 
-        bara if sektion funkar även om det finns data i input boxes*/
         private void Add_teachers_ServerClick(object sender, EventArgs e)
         {
              
