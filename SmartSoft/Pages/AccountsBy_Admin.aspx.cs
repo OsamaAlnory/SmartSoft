@@ -13,6 +13,7 @@ namespace SmartSoft.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+           
             //Get School (Dropdown Auto fill)
             using (SqlConnection con = new SqlConnection(Database.ConnectionString.con))
             {
