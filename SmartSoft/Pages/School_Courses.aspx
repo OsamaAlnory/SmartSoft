@@ -41,6 +41,7 @@
                   <h4 class="card-title">Lägg till klass:</h4>
                  </div>
                 <div class="card-body table-responsive">
+
                   <table class="table table-hover">
                     <thead class="text-primary">
                       
@@ -51,8 +52,7 @@
                     </thead>
                     <tbody>
                       <tr>
-                        
-                        <td><asp:TextBox CssClass="form-control egen" placeholder="Skriv här.." ID="Kursnamn" runat="server"></asp:TextBox></td>
+                         <td><asp:TextBox CssClass="form-control egen" placeholder="Skriv här.." ID="Kursnamn" runat="server"></asp:TextBox></td>
                         <td>
                             <asp:DropDownList CssClass="form-control egen" DataTextField="Teacher" DataValueField="ID" ID="Teacher_dropdown" runat="server">
                              </asp:DropDownList>
@@ -62,10 +62,10 @@
                              </asp:DropDownList>
                          </td>
                         <td> <asp:Button CssClass="btn btn-primary pull-right" ID="addkurs" runat="server" OnClick="addkurs_Click"  Text="Lägg till"></asp:Button></td>
-                      </tr>
+                           </tr>
                      </tbody>
                   </table>
-                </div>
+                 </div>
               </div>
             </div>
             </div>

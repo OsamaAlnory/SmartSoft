@@ -13,30 +13,38 @@ namespace SmartSoft.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //object[] getteacher = Main.GetDBValue("Classes","Teacher", new string[] { "Creator" },  new string[] { Session["Username"].ToString() });
-            //object[] getclass = Main.GetDBValue("Classes", "Class", new string[] { "Creator" }, new string[] { Session["Username"].ToString() });
-             
-            //Get Teacher
-            using(SqlConnection con = new SqlConnection(Database.ConnectionString.con))
-            {
+
+           
+                //Get Teacher
+                using (SqlConnection con = new SqlConnection(Database.ConnectionString.con))
+                {
                     SqlCommand cmd = new SqlCommand("Select ID,Teacher from Classes", con);
                     con.Open();
                     Teacher_dropdown.DataSource = cmd.ExecuteReader();
                     Teacher_dropdown.DataBind();
                     con.Close();
- 
-            }
-            //Get Class
-            using (SqlConnection con = new SqlConnection(Database.ConnectionString.con))
-            {
-                SqlCommand cmd1 = new SqlCommand("Select ID,Class from Classes", con);
-                con.Open();
-                Class_dropdown.DataSource = cmd1.ExecuteReader();
-                Class_dropdown.DataBind();
-                con.Close();
+                    ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "hello();", true);
 
-            }
-          }
+                }
+                //Get Class
+                using (SqlConnection con2 = new SqlConnection(Database.ConnectionString.con))
+                {
+                    SqlCommand cmd1 = new SqlCommand("Select ID,Class from Classes", con2);
+                    con2.Open();
+                    Class_dropdown.DataSource = cmd1.ExecuteReader();
+                    Class_dropdown.DataBind();
+                    con2.Close();
+                    ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "hello();", true);
+
+                }
+            
+                //ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "hello();", true);
+            
+            //object[] getteacher = Main.GetDBValue("Classes","Teacher", new string[] { "Creator" },  new string[] { Session["Username"].ToString() });
+            //object[] getclass = Main.GetDBValue("Classes", "Class", new string[] { "Creator" }, new string[] { Session["Username"].ToString() });
+
+          
+        }
 
         //Problem här (Den addar inte till Databass Async Problem)***
         protected void addkurs_Click(object sender, EventArgs e)
