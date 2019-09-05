@@ -59,7 +59,7 @@ namespace SmartSoft.Pages
             {
 
                Main.AddTo(Producer.AddCourse, Fields.COURSES, null, 0,
-               Kursnamn.Text, Teacher_dropdown.SelectedItem,Class_dropdown.SelectedItem);
+               Kursnamn.Text, Teacher_dropdown.SelectedItem.Text,Class_dropdown.SelectedItem.Text);
                Clear_AddCourses();
             }
             Clear_AddCourses();
